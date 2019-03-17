@@ -7,6 +7,7 @@ using McTools.Xrm.Connection;
 using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Metadata;
+using Microsoft.Xrm.Tooling.CrmConnectControl;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -47,6 +48,7 @@ namespace XrmSpeedyUI
             //this.cManager.ConnectionSucceed += new ConnectionManager.ConnectionSucceedEventHandler(cManager_ConnectionSucceed);
             //this.cManager.ConnectionFailed += new ConnectionManager.ConnectionFailedEventHandler(cManager_ConnectionFailed);
             this.cManager.StepChanged += new ConnectionManager.StepChangedEventHandler(cManager_StepChanged);
+            //TODO: Remove dependency on CrmConnectionStatusBar since we are replacing the way this tool connects...using xrm tooling.
             ccsb = new CrmConnectionStatusBar(this.cManager);
             this.Controls.Add(ccsb);
         }
@@ -62,14 +64,17 @@ namespace XrmSpeedyUI
             this.service = null;
         }
 
-        void ConnectionSucceeded(IOrganizationService svc)
+        void ConnectionSucceeded(CrmConnectionManager crmConnectionManager)
         {
+            //TODO: Remove dependency on CrmConnectionStatusBar since we are replacing the way this tool connects...using xrm tooling.
             btnAuthenticate.Enabled = false;
 
 
-            this.service = svc;
+            this.service = crmConnectionManager.CrmSvc;
 
+            // HACK to get this working for now.  Need to clean this up.
             var connectionDetail = new ConnectionDetail();
+            connectionDetail.OrganizationFriendlyName = crmConnectionManager.ConnectedOrgFriendlyName;
             this.ccsb.SetConnectionStatus(true, connectionDetail);
             this.ccsb.SetMessage(string.Empty);
 
@@ -89,7 +94,7 @@ namespace XrmSpeedyUI
             // Handle return. 
             if (cdsLoginControl.CrmConnectionMgr != null && cdsLoginControl.CrmConnectionMgr.CrmSvc != null && cdsLoginControl.CrmConnectionMgr.CrmSvc.IsReady)
             {
-                ConnectionSucceeded(cdsLoginControl.CrmConnectionMgr.CrmSvc);
+                ConnectionSucceeded(cdsLoginControl.CrmConnectionMgr);
             }   
             else
                 MessageBox.Show("BadConnect");
