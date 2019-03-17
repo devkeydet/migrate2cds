@@ -1463,6 +1463,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMain";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "XRM Speedy v.02";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.grpFieldTwoOption.ResumeLayout(false);
