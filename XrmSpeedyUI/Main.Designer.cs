@@ -85,6 +85,7 @@
             this.label30 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.grpConnection = new System.Windows.Forms.GroupBox();
+            this.panelConnnectDB = new System.Windows.Forms.Panel();
             this.label33 = new System.Windows.Forms.Label();
             this.btnRestart = new System.Windows.Forms.Button();
             this.txtPrefix = new System.Windows.Forms.TextBox();
@@ -168,9 +169,10 @@
             // btnCreateEntity
             // 
             this.btnCreateEntity.Enabled = false;
-            this.btnCreateEntity.Location = new System.Drawing.Point(6, 19);
+            this.btnCreateEntity.Location = new System.Drawing.Point(11, 23);
+            this.btnCreateEntity.Margin = new System.Windows.Forms.Padding(6);
             this.btnCreateEntity.Name = "btnCreateEntity";
-            this.btnCreateEntity.Size = new System.Drawing.Size(129, 23);
+            this.btnCreateEntity.Size = new System.Drawing.Size(133, 34);
             this.btnCreateEntity.TabIndex = 12;
             this.btnCreateEntity.Text = "Create Entities";
             this.btnCreateEntity.UseVisualStyleBackColor = true;
@@ -186,9 +188,11 @@
             this.grpFieldTwoOption.Controls.Add(this.label15);
             this.grpFieldTwoOption.Controls.Add(this.txtFieldTwoOptionNoValue);
             this.grpFieldTwoOption.Controls.Add(this.label14);
-            this.grpFieldTwoOption.Location = new System.Drawing.Point(428, 475);
+            this.grpFieldTwoOption.Location = new System.Drawing.Point(773, 730);
+            this.grpFieldTwoOption.Margin = new System.Windows.Forms.Padding(6);
             this.grpFieldTwoOption.Name = "grpFieldTwoOption";
-            this.grpFieldTwoOption.Size = new System.Drawing.Size(202, 127);
+            this.grpFieldTwoOption.Padding = new System.Windows.Forms.Padding(6);
+            this.grpFieldTwoOption.Size = new System.Drawing.Size(370, 234);
             this.grpFieldTwoOption.TabIndex = 15;
             this.grpFieldTwoOption.TabStop = false;
             this.grpFieldTwoOption.Tag = "";
@@ -198,7 +202,8 @@
             // 
             this.label43.AutoSize = true;
             this.label43.ForeColor = System.Drawing.Color.Red;
-            this.label43.Location = new System.Drawing.Point(55, 47);
+            this.label43.Location = new System.Drawing.Point(101, 87);
+            this.label43.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(11, 13);
             this.label43.TabIndex = 23;
@@ -208,7 +213,8 @@
             // 
             this.label42.AutoSize = true;
             this.label42.ForeColor = System.Drawing.Color.Red;
-            this.label42.Location = new System.Drawing.Point(51, 10);
+            this.label42.Location = new System.Drawing.Point(94, 18);
+            this.label42.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(11, 13);
             this.label42.TabIndex = 22;
@@ -220,9 +226,10 @@
             this.ddlFieldTwoOptionDefaultValue.Items.AddRange(new object[] {
             "No",
             "Yes"});
-            this.ddlFieldTwoOptionDefaultValue.Location = new System.Drawing.Point(4, 100);
+            this.ddlFieldTwoOptionDefaultValue.Location = new System.Drawing.Point(7, 185);
+            this.ddlFieldTwoOptionDefaultValue.Margin = new System.Windows.Forms.Padding(6);
             this.ddlFieldTwoOptionDefaultValue.Name = "ddlFieldTwoOptionDefaultValue";
-            this.ddlFieldTwoOptionDefaultValue.Size = new System.Drawing.Size(172, 21);
+            this.ddlFieldTwoOptionDefaultValue.Size = new System.Drawing.Size(312, 21);
             this.ddlFieldTwoOptionDefaultValue.TabIndex = 5;
             this.ddlFieldTwoOptionDefaultValue.Text = "No";
             this.ddlFieldTwoOptionDefaultValue.Validated += new System.EventHandler(this.ddlFieldTwoOptionDefaultValue_Validated);
@@ -230,7 +237,8 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(4, 85);
+            this.label16.Location = new System.Drawing.Point(7, 157);
+            this.label16.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(71, 13);
             this.label16.TabIndex = 4;
@@ -238,9 +246,10 @@
             // 
             // txtFieldTwoOptionYesValue
             // 
-            this.txtFieldTwoOptionYesValue.Location = new System.Drawing.Point(4, 63);
+            this.txtFieldTwoOptionYesValue.Location = new System.Drawing.Point(7, 116);
+            this.txtFieldTwoOptionYesValue.Margin = new System.Windows.Forms.Padding(6);
             this.txtFieldTwoOptionYesValue.Name = "txtFieldTwoOptionYesValue";
-            this.txtFieldTwoOptionYesValue.Size = new System.Drawing.Size(172, 20);
+            this.txtFieldTwoOptionYesValue.Size = new System.Drawing.Size(312, 20);
             this.txtFieldTwoOptionYesValue.TabIndex = 3;
             this.txtFieldTwoOptionYesValue.Text = "Yes";
             this.txtFieldTwoOptionYesValue.Validating += new System.ComponentModel.CancelEventHandler(this.txtFieldTwoOptionYesValue_Validating);
@@ -249,7 +258,8 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(4, 47);
+            this.label15.Location = new System.Drawing.Point(7, 87);
+            this.label15.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(55, 13);
             this.label15.TabIndex = 2;
@@ -257,9 +267,10 @@
             // 
             // txtFieldTwoOptionNoValue
             // 
-            this.txtFieldTwoOptionNoValue.Location = new System.Drawing.Point(4, 25);
+            this.txtFieldTwoOptionNoValue.Location = new System.Drawing.Point(7, 46);
+            this.txtFieldTwoOptionNoValue.Margin = new System.Windows.Forms.Padding(6);
             this.txtFieldTwoOptionNoValue.Name = "txtFieldTwoOptionNoValue";
-            this.txtFieldTwoOptionNoValue.Size = new System.Drawing.Size(172, 20);
+            this.txtFieldTwoOptionNoValue.Size = new System.Drawing.Size(312, 20);
             this.txtFieldTwoOptionNoValue.TabIndex = 1;
             this.txtFieldTwoOptionNoValue.Text = "No";
             this.txtFieldTwoOptionNoValue.Validating += new System.ComponentModel.CancelEventHandler(this.txtFieldTwoOptionNoValue_Validating);
@@ -268,7 +279,8 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(4, 10);
+            this.label14.Location = new System.Drawing.Point(7, 18);
+            this.label14.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(51, 13);
             this.label14.TabIndex = 0;
@@ -284,9 +296,11 @@
             this.grpFieldDecimal.Controls.Add(this.label24);
             this.grpFieldDecimal.Controls.Add(this.ddlFieldDecimalPrecision);
             this.grpFieldDecimal.Controls.Add(this.label25);
-            this.grpFieldDecimal.Location = new System.Drawing.Point(673, 480);
+            this.grpFieldDecimal.Location = new System.Drawing.Point(1155, 762);
+            this.grpFieldDecimal.Margin = new System.Windows.Forms.Padding(6);
             this.grpFieldDecimal.Name = "grpFieldDecimal";
-            this.grpFieldDecimal.Size = new System.Drawing.Size(202, 127);
+            this.grpFieldDecimal.Padding = new System.Windows.Forms.Padding(6);
+            this.grpFieldDecimal.Size = new System.Drawing.Size(370, 234);
             this.grpFieldDecimal.TabIndex = 18;
             this.grpFieldDecimal.TabStop = false;
             this.grpFieldDecimal.Visible = false;
@@ -295,7 +309,8 @@
             // 
             this.label41.AutoSize = true;
             this.label41.ForeColor = System.Drawing.Color.Red;
-            this.label41.Location = new System.Drawing.Point(81, 85);
+            this.label41.Location = new System.Drawing.Point(149, 157);
+            this.label41.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(11, 13);
             this.label41.TabIndex = 29;
@@ -305,7 +320,8 @@
             // 
             this.label40.AutoSize = true;
             this.label40.ForeColor = System.Drawing.Color.Red;
-            this.label40.Location = new System.Drawing.Point(78, 47);
+            this.label40.Location = new System.Drawing.Point(143, 87);
+            this.label40.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(11, 13);
             this.label40.TabIndex = 28;
@@ -313,9 +329,10 @@
             // 
             // txtFieldDecimalMaximum
             // 
-            this.txtFieldDecimalMaximum.Location = new System.Drawing.Point(4, 100);
+            this.txtFieldDecimalMaximum.Location = new System.Drawing.Point(7, 185);
+            this.txtFieldDecimalMaximum.Margin = new System.Windows.Forms.Padding(6);
             this.txtFieldDecimalMaximum.Name = "txtFieldDecimalMaximum";
-            this.txtFieldDecimalMaximum.Size = new System.Drawing.Size(172, 20);
+            this.txtFieldDecimalMaximum.Size = new System.Drawing.Size(312, 20);
             this.txtFieldDecimalMaximum.TabIndex = 5;
             this.txtFieldDecimalMaximum.Text = "1000000000.00";
             this.txtFieldDecimalMaximum.Validating += new System.ComponentModel.CancelEventHandler(this.txtFieldDecimalMaximum_Validating);
@@ -324,7 +341,8 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(4, 85);
+            this.label23.Location = new System.Drawing.Point(7, 157);
+            this.label23.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(81, 13);
             this.label23.TabIndex = 4;
@@ -332,9 +350,10 @@
             // 
             // txtFieldDecimalMinimum
             // 
-            this.txtFieldDecimalMinimum.Location = new System.Drawing.Point(4, 63);
+            this.txtFieldDecimalMinimum.Location = new System.Drawing.Point(7, 116);
+            this.txtFieldDecimalMinimum.Margin = new System.Windows.Forms.Padding(6);
             this.txtFieldDecimalMinimum.Name = "txtFieldDecimalMinimum";
-            this.txtFieldDecimalMinimum.Size = new System.Drawing.Size(172, 20);
+            this.txtFieldDecimalMinimum.Size = new System.Drawing.Size(312, 20);
             this.txtFieldDecimalMinimum.TabIndex = 3;
             this.txtFieldDecimalMinimum.Text = "0.00";
             this.txtFieldDecimalMinimum.Validating += new System.ComponentModel.CancelEventHandler(this.txtFieldDecimalMinimum_Validating);
@@ -343,7 +362,8 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(4, 47);
+            this.label24.Location = new System.Drawing.Point(7, 87);
+            this.label24.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(78, 13);
             this.label24.TabIndex = 2;
@@ -352,9 +372,10 @@
             // ddlFieldDecimalPrecision
             // 
             this.ddlFieldDecimalPrecision.FormattingEnabled = true;
-            this.ddlFieldDecimalPrecision.Location = new System.Drawing.Point(4, 25);
+            this.ddlFieldDecimalPrecision.Location = new System.Drawing.Point(7, 46);
+            this.ddlFieldDecimalPrecision.Margin = new System.Windows.Forms.Padding(6);
             this.ddlFieldDecimalPrecision.Name = "ddlFieldDecimalPrecision";
-            this.ddlFieldDecimalPrecision.Size = new System.Drawing.Size(172, 21);
+            this.ddlFieldDecimalPrecision.Size = new System.Drawing.Size(312, 21);
             this.ddlFieldDecimalPrecision.TabIndex = 1;
             this.ddlFieldDecimalPrecision.SelectionChangeCommitted += new System.EventHandler(this.ddlFieldDecimalPrecision_SelectionChangeCommitted);
             this.ddlFieldDecimalPrecision.Validated += new System.EventHandler(this.ddlFieldDecimalPrecision_Validated);
@@ -362,7 +383,8 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(4, 10);
+            this.label25.Location = new System.Drawing.Point(7, 18);
+            this.label25.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(50, 13);
             this.label25.TabIndex = 0;
@@ -373,9 +395,11 @@
             this.grpFieldWhole.Controls.Add(this.grpFieldWholeMinMax);
             this.grpFieldWhole.Controls.Add(this.ddlFieldWholeFormat);
             this.grpFieldWhole.Controls.Add(this.label17);
-            this.grpFieldWhole.Location = new System.Drawing.Point(220, 470);
+            this.grpFieldWhole.Location = new System.Drawing.Point(278, 738);
+            this.grpFieldWhole.Margin = new System.Windows.Forms.Padding(6);
             this.grpFieldWhole.Name = "grpFieldWhole";
-            this.grpFieldWhole.Size = new System.Drawing.Size(202, 127);
+            this.grpFieldWhole.Padding = new System.Windows.Forms.Padding(6);
+            this.grpFieldWhole.Size = new System.Drawing.Size(370, 226);
             this.grpFieldWhole.TabIndex = 16;
             this.grpFieldWhole.TabStop = false;
             this.grpFieldWhole.Visible = false;
@@ -388,9 +412,11 @@
             this.grpFieldWholeMinMax.Controls.Add(this.label19);
             this.grpFieldWholeMinMax.Controls.Add(this.txtFieldWholeMinimum);
             this.grpFieldWholeMinMax.Controls.Add(this.label18);
-            this.grpFieldWholeMinMax.Location = new System.Drawing.Point(4, 46);
+            this.grpFieldWholeMinMax.Location = new System.Drawing.Point(7, 85);
+            this.grpFieldWholeMinMax.Margin = new System.Windows.Forms.Padding(6);
             this.grpFieldWholeMinMax.Name = "grpFieldWholeMinMax";
-            this.grpFieldWholeMinMax.Size = new System.Drawing.Size(195, 78);
+            this.grpFieldWholeMinMax.Padding = new System.Windows.Forms.Padding(6);
+            this.grpFieldWholeMinMax.Size = new System.Drawing.Size(358, 144);
             this.grpFieldWholeMinMax.TabIndex = 2;
             this.grpFieldWholeMinMax.TabStop = false;
             // 
@@ -398,7 +424,8 @@
             // 
             this.label46.AutoSize = true;
             this.label46.ForeColor = System.Drawing.Color.Red;
-            this.label46.Location = new System.Drawing.Point(77, 36);
+            this.label46.Location = new System.Drawing.Point(92, 66);
+            this.label46.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(11, 13);
             this.label46.TabIndex = 31;
@@ -408,7 +435,8 @@
             // 
             this.label45.AutoSize = true;
             this.label45.ForeColor = System.Drawing.Color.Red;
-            this.label45.Location = new System.Drawing.Point(73, 1);
+            this.label45.Location = new System.Drawing.Point(92, 2);
+            this.label45.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(11, 13);
             this.label45.TabIndex = 30;
@@ -416,9 +444,10 @@
             // 
             // txtFieldWholeMaximum
             // 
-            this.txtFieldWholeMaximum.Location = new System.Drawing.Point(0, 51);
+            this.txtFieldWholeMaximum.Location = new System.Drawing.Point(0, 85);
+            this.txtFieldWholeMaximum.Margin = new System.Windows.Forms.Padding(6);
             this.txtFieldWholeMaximum.Name = "txtFieldWholeMaximum";
-            this.txtFieldWholeMaximum.Size = new System.Drawing.Size(172, 20);
+            this.txtFieldWholeMaximum.Size = new System.Drawing.Size(312, 20);
             this.txtFieldWholeMaximum.TabIndex = 29;
             this.txtFieldWholeMaximum.Text = "2147483647";
             this.txtFieldWholeMaximum.Validating += new System.ComponentModel.CancelEventHandler(this.txtFieldWholeMaximum_Validating);
@@ -427,7 +456,8 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(0, 36);
+            this.label19.Location = new System.Drawing.Point(0, 66);
+            this.label19.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(81, 13);
             this.label19.TabIndex = 28;
@@ -435,9 +465,10 @@
             // 
             // txtFieldWholeMinimum
             // 
-            this.txtFieldWholeMinimum.Location = new System.Drawing.Point(0, 14);
+            this.txtFieldWholeMinimum.Location = new System.Drawing.Point(0, 26);
+            this.txtFieldWholeMinimum.Margin = new System.Windows.Forms.Padding(6);
             this.txtFieldWholeMinimum.Name = "txtFieldWholeMinimum";
-            this.txtFieldWholeMinimum.Size = new System.Drawing.Size(172, 20);
+            this.txtFieldWholeMinimum.Size = new System.Drawing.Size(312, 20);
             this.txtFieldWholeMinimum.TabIndex = 27;
             this.txtFieldWholeMinimum.Text = "-2147483648";
             this.txtFieldWholeMinimum.Validating += new System.ComponentModel.CancelEventHandler(this.txtFieldWholeMinimum_Validating);
@@ -446,7 +477,8 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(0, 1);
+            this.label18.Location = new System.Drawing.Point(0, 2);
+            this.label18.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(78, 13);
             this.label18.TabIndex = 26;
@@ -457,9 +489,10 @@
             this.ddlFieldWholeFormat.FormattingEnabled = true;
             this.ddlFieldWholeFormat.Items.AddRange(new object[] {
             ""});
-            this.ddlFieldWholeFormat.Location = new System.Drawing.Point(4, 25);
+            this.ddlFieldWholeFormat.Location = new System.Drawing.Point(7, 46);
+            this.ddlFieldWholeFormat.Margin = new System.Windows.Forms.Padding(6);
             this.ddlFieldWholeFormat.Name = "ddlFieldWholeFormat";
-            this.ddlFieldWholeFormat.Size = new System.Drawing.Size(172, 21);
+            this.ddlFieldWholeFormat.Size = new System.Drawing.Size(312, 21);
             this.ddlFieldWholeFormat.TabIndex = 1;
             this.ddlFieldWholeFormat.SelectionChangeCommitted += new System.EventHandler(this.ddlFieldWholeFormat_SelectionChangeCommitted);
             this.ddlFieldWholeFormat.Validated += new System.EventHandler(this.ddlFieldWholeFormat_Validated);
@@ -467,7 +500,8 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(4, 10);
+            this.label17.Location = new System.Drawing.Point(7, 18);
+            this.label17.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(39, 13);
             this.label17.TabIndex = 0;
@@ -478,9 +512,11 @@
             this.grpFieldMultiple.Controls.Add(this.label44);
             this.grpFieldMultiple.Controls.Add(this.txtFieldMemoMaxLength);
             this.grpFieldMultiple.Controls.Add(this.label29);
-            this.grpFieldMultiple.Location = new System.Drawing.Point(428, 474);
+            this.grpFieldMultiple.Location = new System.Drawing.Point(278, 650);
+            this.grpFieldMultiple.Margin = new System.Windows.Forms.Padding(6);
             this.grpFieldMultiple.Name = "grpFieldMultiple";
-            this.grpFieldMultiple.Size = new System.Drawing.Size(202, 127);
+            this.grpFieldMultiple.Padding = new System.Windows.Forms.Padding(6);
+            this.grpFieldMultiple.Size = new System.Drawing.Size(370, 79);
             this.grpFieldMultiple.TabIndex = 20;
             this.grpFieldMultiple.TabStop = false;
             this.grpFieldMultiple.Tag = "";
@@ -490,7 +526,8 @@
             // 
             this.label44.AutoSize = true;
             this.label44.ForeColor = System.Drawing.Color.Red;
-            this.label44.Location = new System.Drawing.Point(87, 10);
+            this.label44.Location = new System.Drawing.Point(160, 18);
+            this.label44.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(11, 13);
             this.label44.TabIndex = 22;
@@ -498,10 +535,11 @@
             // 
             // txtFieldMemoMaxLength
             // 
-            this.txtFieldMemoMaxLength.Location = new System.Drawing.Point(4, 25);
+            this.txtFieldMemoMaxLength.Location = new System.Drawing.Point(7, 46);
+            this.txtFieldMemoMaxLength.Margin = new System.Windows.Forms.Padding(6);
             this.txtFieldMemoMaxLength.MaxLength = 7;
             this.txtFieldMemoMaxLength.Name = "txtFieldMemoMaxLength";
-            this.txtFieldMemoMaxLength.Size = new System.Drawing.Size(172, 20);
+            this.txtFieldMemoMaxLength.Size = new System.Drawing.Size(312, 20);
             this.txtFieldMemoMaxLength.TabIndex = 4;
             this.txtFieldMemoMaxLength.Text = "2000";
             this.txtFieldMemoMaxLength.Validating += new System.ComponentModel.CancelEventHandler(this.txtFieldMemoMaxLength_Validating);
@@ -510,7 +548,8 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(4, 10);
+            this.label29.Location = new System.Drawing.Point(7, 18);
+            this.label29.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(87, 13);
             this.label29.TabIndex = 2;
@@ -526,9 +565,11 @@
             this.grpFieldFloat.Controls.Add(this.label21);
             this.grpFieldFloat.Controls.Add(this.ddlFieldFloatPrecision);
             this.grpFieldFloat.Controls.Add(this.label20);
-            this.grpFieldFloat.Location = new System.Drawing.Point(12, 468);
+            this.grpFieldFloat.Location = new System.Drawing.Point(25, 646);
+            this.grpFieldFloat.Margin = new System.Windows.Forms.Padding(6);
             this.grpFieldFloat.Name = "grpFieldFloat";
-            this.grpFieldFloat.Size = new System.Drawing.Size(202, 127);
+            this.grpFieldFloat.Padding = new System.Windows.Forms.Padding(6);
+            this.grpFieldFloat.Size = new System.Drawing.Size(247, 234);
             this.grpFieldFloat.TabIndex = 17;
             this.grpFieldFloat.TabStop = false;
             this.grpFieldFloat.Visible = false;
@@ -537,7 +578,8 @@
             // 
             this.label48.AutoSize = true;
             this.label48.ForeColor = System.Drawing.Color.Red;
-            this.label48.Location = new System.Drawing.Point(81, 85);
+            this.label48.Location = new System.Drawing.Point(99, 157);
+            this.label48.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(11, 13);
             this.label48.TabIndex = 30;
@@ -547,7 +589,8 @@
             // 
             this.label47.AutoSize = true;
             this.label47.ForeColor = System.Drawing.Color.Red;
-            this.label47.Location = new System.Drawing.Point(78, 47);
+            this.label47.Location = new System.Drawing.Point(99, 87);
+            this.label47.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(11, 13);
             this.label47.TabIndex = 29;
@@ -555,9 +598,10 @@
             // 
             // txtFieldFloatMaximum
             // 
-            this.txtFieldFloatMaximum.Location = new System.Drawing.Point(4, 100);
+            this.txtFieldFloatMaximum.Location = new System.Drawing.Point(7, 174);
+            this.txtFieldFloatMaximum.Margin = new System.Windows.Forms.Padding(6);
             this.txtFieldFloatMaximum.Name = "txtFieldFloatMaximum";
-            this.txtFieldFloatMaximum.Size = new System.Drawing.Size(172, 20);
+            this.txtFieldFloatMaximum.Size = new System.Drawing.Size(218, 20);
             this.txtFieldFloatMaximum.TabIndex = 5;
             this.txtFieldFloatMaximum.Text = "1000000000.00";
             this.txtFieldFloatMaximum.Validating += new System.ComponentModel.CancelEventHandler(this.txtFieldFloatMaximum_Validating);
@@ -566,7 +610,8 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(4, 85);
+            this.label22.Location = new System.Drawing.Point(7, 157);
+            this.label22.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(81, 13);
             this.label22.TabIndex = 4;
@@ -574,9 +619,10 @@
             // 
             // txtFieldFloatMinimum
             // 
-            this.txtFieldFloatMinimum.Location = new System.Drawing.Point(4, 63);
+            this.txtFieldFloatMinimum.Location = new System.Drawing.Point(7, 105);
+            this.txtFieldFloatMinimum.Margin = new System.Windows.Forms.Padding(6);
             this.txtFieldFloatMinimum.Name = "txtFieldFloatMinimum";
-            this.txtFieldFloatMinimum.Size = new System.Drawing.Size(172, 20);
+            this.txtFieldFloatMinimum.Size = new System.Drawing.Size(218, 20);
             this.txtFieldFloatMinimum.TabIndex = 3;
             this.txtFieldFloatMinimum.Text = "0.00";
             this.txtFieldFloatMinimum.Validating += new System.ComponentModel.CancelEventHandler(this.txtFieldFloatMinimum_Validating);
@@ -585,7 +631,8 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(4, 47);
+            this.label21.Location = new System.Drawing.Point(7, 87);
+            this.label21.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(78, 13);
             this.label21.TabIndex = 2;
@@ -594,9 +641,10 @@
             // ddlFieldFloatPrecision
             // 
             this.ddlFieldFloatPrecision.FormattingEnabled = true;
-            this.ddlFieldFloatPrecision.Location = new System.Drawing.Point(4, 25);
+            this.ddlFieldFloatPrecision.Location = new System.Drawing.Point(7, 35);
+            this.ddlFieldFloatPrecision.Margin = new System.Windows.Forms.Padding(6);
             this.ddlFieldFloatPrecision.Name = "ddlFieldFloatPrecision";
-            this.ddlFieldFloatPrecision.Size = new System.Drawing.Size(172, 21);
+            this.ddlFieldFloatPrecision.Size = new System.Drawing.Size(218, 21);
             this.ddlFieldFloatPrecision.TabIndex = 1;
             this.ddlFieldFloatPrecision.SelectionChangeCommitted += new System.EventHandler(this.ddlFieldFloatPrecision_SelectionChangeCommitted);
             this.ddlFieldFloatPrecision.Validated += new System.EventHandler(this.ddlFieldFloatPrecision_Validated);
@@ -604,7 +652,8 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(4, 10);
+            this.label20.Location = new System.Drawing.Point(7, 18);
+            this.label20.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(50, 13);
             this.label20.TabIndex = 0;
@@ -620,9 +669,11 @@
             this.grpFieldCurrency.Controls.Add(this.label27);
             this.grpFieldCurrency.Controls.Add(this.ddlFieldCurrencyPrecision);
             this.grpFieldCurrency.Controls.Add(this.label28);
-            this.grpFieldCurrency.Location = new System.Drawing.Point(2, 480);
+            this.grpFieldCurrency.Location = new System.Drawing.Point(4, 886);
+            this.grpFieldCurrency.Margin = new System.Windows.Forms.Padding(6);
             this.grpFieldCurrency.Name = "grpFieldCurrency";
-            this.grpFieldCurrency.Size = new System.Drawing.Size(202, 127);
+            this.grpFieldCurrency.Padding = new System.Windows.Forms.Padding(6);
+            this.grpFieldCurrency.Size = new System.Drawing.Size(370, 234);
             this.grpFieldCurrency.TabIndex = 19;
             this.grpFieldCurrency.TabStop = false;
             this.grpFieldCurrency.Visible = false;
@@ -631,7 +682,8 @@
             // 
             this.label50.AutoSize = true;
             this.label50.ForeColor = System.Drawing.Color.Red;
-            this.label50.Location = new System.Drawing.Point(81, 85);
+            this.label50.Location = new System.Drawing.Point(149, 157);
+            this.label50.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(11, 13);
             this.label50.TabIndex = 23;
@@ -641,7 +693,8 @@
             // 
             this.label49.AutoSize = true;
             this.label49.ForeColor = System.Drawing.Color.Red;
-            this.label49.Location = new System.Drawing.Point(78, 47);
+            this.label49.Location = new System.Drawing.Point(143, 87);
+            this.label49.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(11, 13);
             this.label49.TabIndex = 22;
@@ -649,9 +702,10 @@
             // 
             // txtFieldCurrencyMaximum
             // 
-            this.txtFieldCurrencyMaximum.Location = new System.Drawing.Point(4, 100);
+            this.txtFieldCurrencyMaximum.Location = new System.Drawing.Point(7, 185);
+            this.txtFieldCurrencyMaximum.Margin = new System.Windows.Forms.Padding(6);
             this.txtFieldCurrencyMaximum.Name = "txtFieldCurrencyMaximum";
-            this.txtFieldCurrencyMaximum.Size = new System.Drawing.Size(172, 20);
+            this.txtFieldCurrencyMaximum.Size = new System.Drawing.Size(312, 20);
             this.txtFieldCurrencyMaximum.TabIndex = 5;
             this.txtFieldCurrencyMaximum.Text = "1000000000.0000";
             this.txtFieldCurrencyMaximum.Validating += new System.ComponentModel.CancelEventHandler(this.txtFieldCurrencyMaximum_Validating);
@@ -660,7 +714,8 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(4, 85);
+            this.label26.Location = new System.Drawing.Point(7, 157);
+            this.label26.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(81, 13);
             this.label26.TabIndex = 4;
@@ -668,9 +723,10 @@
             // 
             // txtFieldCurrencyMinimum
             // 
-            this.txtFieldCurrencyMinimum.Location = new System.Drawing.Point(4, 63);
+            this.txtFieldCurrencyMinimum.Location = new System.Drawing.Point(7, 116);
+            this.txtFieldCurrencyMinimum.Margin = new System.Windows.Forms.Padding(6);
             this.txtFieldCurrencyMinimum.Name = "txtFieldCurrencyMinimum";
-            this.txtFieldCurrencyMinimum.Size = new System.Drawing.Size(172, 20);
+            this.txtFieldCurrencyMinimum.Size = new System.Drawing.Size(312, 20);
             this.txtFieldCurrencyMinimum.TabIndex = 3;
             this.txtFieldCurrencyMinimum.Text = "0.0000";
             this.txtFieldCurrencyMinimum.Validating += new System.ComponentModel.CancelEventHandler(this.txtFieldCurrencyMinimum_Validating);
@@ -679,7 +735,8 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(4, 47);
+            this.label27.Location = new System.Drawing.Point(7, 87);
+            this.label27.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(78, 13);
             this.label27.TabIndex = 2;
@@ -688,9 +745,10 @@
             // ddlFieldCurrencyPrecision
             // 
             this.ddlFieldCurrencyPrecision.FormattingEnabled = true;
-            this.ddlFieldCurrencyPrecision.Location = new System.Drawing.Point(4, 25);
+            this.ddlFieldCurrencyPrecision.Location = new System.Drawing.Point(7, 46);
+            this.ddlFieldCurrencyPrecision.Margin = new System.Windows.Forms.Padding(6);
             this.ddlFieldCurrencyPrecision.Name = "ddlFieldCurrencyPrecision";
-            this.ddlFieldCurrencyPrecision.Size = new System.Drawing.Size(172, 21);
+            this.ddlFieldCurrencyPrecision.Size = new System.Drawing.Size(312, 21);
             this.ddlFieldCurrencyPrecision.TabIndex = 1;
             this.ddlFieldCurrencyPrecision.SelectionChangeCommitted += new System.EventHandler(this.ddlFieldCurrencyPrecision_SelectionChangeCommitted);
             this.ddlFieldCurrencyPrecision.Validated += new System.EventHandler(this.ddlFieldCurrencyPrecision_Validated);
@@ -698,7 +756,8 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(4, 10);
+            this.label28.Location = new System.Drawing.Point(7, 18);
+            this.label28.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(50, 13);
             this.label28.TabIndex = 0;
@@ -708,9 +767,11 @@
             // 
             this.grpFieldDate.Controls.Add(this.ddlFieldDateFormat);
             this.grpFieldDate.Controls.Add(this.label30);
-            this.grpFieldDate.Location = new System.Drawing.Point(895, 492);
+            this.grpFieldDate.Location = new System.Drawing.Point(1537, 762);
+            this.grpFieldDate.Margin = new System.Windows.Forms.Padding(6);
             this.grpFieldDate.Name = "grpFieldDate";
-            this.grpFieldDate.Size = new System.Drawing.Size(202, 127);
+            this.grpFieldDate.Padding = new System.Windows.Forms.Padding(6);
+            this.grpFieldDate.Size = new System.Drawing.Size(328, 120);
             this.grpFieldDate.TabIndex = 21;
             this.grpFieldDate.TabStop = false;
             this.grpFieldDate.Tag = "";
@@ -719,16 +780,18 @@
             // ddlFieldDateFormat
             // 
             this.ddlFieldDateFormat.FormattingEnabled = true;
-            this.ddlFieldDateFormat.Location = new System.Drawing.Point(4, 25);
+            this.ddlFieldDateFormat.Location = new System.Drawing.Point(7, 46);
+            this.ddlFieldDateFormat.Margin = new System.Windows.Forms.Padding(6);
             this.ddlFieldDateFormat.Name = "ddlFieldDateFormat";
-            this.ddlFieldDateFormat.Size = new System.Drawing.Size(172, 21);
+            this.ddlFieldDateFormat.Size = new System.Drawing.Size(312, 21);
             this.ddlFieldDateFormat.TabIndex = 3;
             this.ddlFieldDateFormat.Validated += new System.EventHandler(this.ddlFieldDateFormat_Validated);
             // 
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(4, 10);
+            this.label30.Location = new System.Drawing.Point(7, 18);
+            this.label30.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(39, 13);
             this.label30.TabIndex = 2;
@@ -737,9 +800,10 @@
             // btnDelete
             // 
             this.btnDelete.Enabled = false;
-            this.btnDelete.Location = new System.Drawing.Point(163, 19);
+            this.btnDelete.Location = new System.Drawing.Point(205, 23);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(6);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(129, 23);
+            this.btnDelete.Size = new System.Drawing.Size(133, 34);
             this.btnDelete.TabIndex = 22;
             this.btnDelete.Text = "Rollback";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -747,6 +811,7 @@
             // 
             // grpConnection
             // 
+            this.grpConnection.Controls.Add(this.panelConnnectDB);
             this.grpConnection.Controls.Add(this.label33);
             this.grpConnection.Controls.Add(this.btnRestart);
             this.grpConnection.Controls.Add(this.txtPrefix);
@@ -757,18 +822,28 @@
             this.grpConnection.Controls.Add(this.cboDatasource);
             this.grpConnection.Controls.Add(this.btnAuthenticate);
             this.grpConnection.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpConnection.Location = new System.Drawing.Point(11, 12);
+            this.grpConnection.Location = new System.Drawing.Point(20, 22);
+            this.grpConnection.Margin = new System.Windows.Forms.Padding(6);
             this.grpConnection.Name = "grpConnection";
-            this.grpConnection.Size = new System.Drawing.Size(454, 178);
+            this.grpConnection.Padding = new System.Windows.Forms.Padding(6);
+            this.grpConnection.Size = new System.Drawing.Size(748, 254);
             this.grpConnection.TabIndex = 23;
             this.grpConnection.TabStop = false;
             this.grpConnection.Text = "Step 1";
+            // 
+            // panelConnnectDB
+            // 
+            this.panelConnnectDB.Location = new System.Drawing.Point(326, 62);
+            this.panelConnnectDB.Name = "panelConnnectDB";
+            this.panelConnnectDB.Size = new System.Drawing.Size(388, 177);
+            this.panelConnnectDB.TabIndex = 20;
             // 
             // label33
             // 
             this.label33.AutoSize = true;
             this.label33.ForeColor = System.Drawing.Color.Red;
-            this.label33.Location = new System.Drawing.Point(203, 20);
+            this.label33.Location = new System.Drawing.Point(372, 37);
+            this.label33.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(11, 13);
             this.label33.TabIndex = 18;
@@ -776,9 +851,10 @@
             // 
             // btnRestart
             // 
-            this.btnRestart.Location = new System.Drawing.Point(6, 120);
+            this.btnRestart.Location = new System.Drawing.Point(11, 186);
+            this.btnRestart.Margin = new System.Windows.Forms.Padding(6);
             this.btnRestart.Name = "btnRestart";
-            this.btnRestart.Size = new System.Drawing.Size(166, 23);
+            this.btnRestart.Size = new System.Drawing.Size(304, 27);
             this.btnRestart.TabIndex = 17;
             this.btnRestart.Text = "Restart";
             this.btnRestart.UseVisualStyleBackColor = true;
@@ -788,10 +864,11 @@
             // txtPrefix
             // 
             this.txtPrefix.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrefix.Location = new System.Drawing.Point(235, 20);
+            this.txtPrefix.Location = new System.Drawing.Point(431, 37);
+            this.txtPrefix.Margin = new System.Windows.Forms.Padding(6);
             this.txtPrefix.MaxLength = 8;
             this.txtPrefix.Name = "txtPrefix";
-            this.txtPrefix.Size = new System.Drawing.Size(181, 20);
+            this.txtPrefix.Size = new System.Drawing.Size(271, 20);
             this.txtPrefix.TabIndex = 16;
             this.txtPrefix.Text = "xrmspdy";
             this.txtPrefix.Validating += new System.ComponentModel.CancelEventHandler(this.txtPrefix_Validating);
@@ -801,7 +878,8 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(175, 20);
+            this.label12.Location = new System.Drawing.Point(321, 37);
+            this.label12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(33, 13);
             this.label12.TabIndex = 15;
@@ -811,9 +889,10 @@
             // 
             this.btnConnectDS.Enabled = false;
             this.btnConnectDS.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConnectDS.Location = new System.Drawing.Point(6, 91);
+            this.btnConnectDS.Location = new System.Drawing.Point(11, 147);
+            this.btnConnectDS.Margin = new System.Windows.Forms.Padding(6);
             this.btnConnectDS.Name = "btnConnectDS";
-            this.btnConnectDS.Size = new System.Drawing.Size(166, 23);
+            this.btnConnectDS.Size = new System.Drawing.Size(304, 27);
             this.btnConnectDS.TabIndex = 11;
             this.btnConnectDS.Text = "Connect to DataSource";
             this.btnConnectDS.UseVisualStyleBackColor = true;
@@ -823,7 +902,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 46);
+            this.label1.Location = new System.Drawing.Point(11, 85);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 13);
             this.label1.TabIndex = 9;
@@ -839,18 +919,20 @@
             "",
             "SQL Server",
             "MS Access"});
-            this.cboDatasource.Location = new System.Drawing.Point(6, 64);
+            this.cboDatasource.Location = new System.Drawing.Point(11, 118);
+            this.cboDatasource.Margin = new System.Windows.Forms.Padding(6);
             this.cboDatasource.Name = "cboDatasource";
-            this.cboDatasource.Size = new System.Drawing.Size(166, 21);
+            this.cboDatasource.Size = new System.Drawing.Size(301, 21);
             this.cboDatasource.TabIndex = 7;
             this.cboDatasource.SelectedIndexChanged += new System.EventHandler(this.cboDatasource_SelectedIndexChanged);
             // 
             // btnAuthenticate
             // 
             this.btnAuthenticate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAuthenticate.Location = new System.Drawing.Point(6, 20);
+            this.btnAuthenticate.Location = new System.Drawing.Point(11, 37);
+            this.btnAuthenticate.Margin = new System.Windows.Forms.Padding(6);
             this.btnAuthenticate.Name = "btnAuthenticate";
-            this.btnAuthenticate.Size = new System.Drawing.Size(166, 23);
+            this.btnAuthenticate.Size = new System.Drawing.Size(304, 34);
             this.btnAuthenticate.TabIndex = 6;
             this.btnAuthenticate.Text = "Authenticate To CRM 2011";
             this.btnAuthenticate.UseVisualStyleBackColor = true;
@@ -861,9 +943,11 @@
             this.grpTables.Controls.Add(this.grpEntity);
             this.grpTables.Controls.Add(this.clbTables);
             this.grpTables.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpTables.Location = new System.Drawing.Point(11, 196);
+            this.grpTables.Location = new System.Drawing.Point(20, 284);
+            this.grpTables.Margin = new System.Windows.Forms.Padding(6);
             this.grpTables.Name = "grpTables";
-            this.grpTables.Size = new System.Drawing.Size(424, 267);
+            this.grpTables.Padding = new System.Windows.Forms.Padding(6);
+            this.grpTables.Size = new System.Drawing.Size(668, 350);
             this.grpTables.TabIndex = 24;
             this.grpTables.TabStop = false;
             this.grpTables.Text = "Step 2";
@@ -884,9 +968,11 @@
             this.grpEntity.Controls.Add(this.label4);
             this.grpEntity.Controls.Add(this.label3);
             this.grpEntity.Controls.Add(this.txtEntityDisplayName);
-            this.grpEntity.Location = new System.Drawing.Point(178, 14);
+            this.grpEntity.Location = new System.Drawing.Point(326, 26);
+            this.grpEntity.Margin = new System.Windows.Forms.Padding(6);
             this.grpEntity.Name = "grpEntity";
-            this.grpEntity.Size = new System.Drawing.Size(238, 244);
+            this.grpEntity.Padding = new System.Windows.Forms.Padding(6);
+            this.grpEntity.Size = new System.Drawing.Size(329, 328);
             this.grpEntity.TabIndex = 10;
             this.grpEntity.TabStop = false;
             this.grpEntity.Visible = false;
@@ -895,7 +981,8 @@
             // 
             this.label36.AutoSize = true;
             this.label36.ForeColor = System.Drawing.Color.Red;
-            this.label36.Location = new System.Drawing.Point(79, 97);
+            this.label36.Location = new System.Drawing.Point(93, 126);
+            this.label36.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(11, 13);
             this.label36.TabIndex = 21;
@@ -905,7 +992,8 @@
             // 
             this.label35.AutoSize = true;
             this.label35.ForeColor = System.Drawing.Color.Red;
-            this.label35.Location = new System.Drawing.Point(66, 52);
+            this.label35.Location = new System.Drawing.Point(79, 71);
+            this.label35.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(11, 13);
             this.label35.TabIndex = 20;
@@ -915,7 +1003,8 @@
             // 
             this.label34.AutoSize = true;
             this.label34.ForeColor = System.Drawing.Color.Red;
-            this.label34.Location = new System.Drawing.Point(74, 12);
+            this.label34.Location = new System.Drawing.Point(86, 22);
+            this.label34.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(11, 13);
             this.label34.TabIndex = 19;
@@ -925,7 +1014,8 @@
             // 
             this.lblEntityPrefix.AutoSize = true;
             this.lblEntityPrefix.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEntityPrefix.Location = new System.Drawing.Point(6, 122);
+            this.lblEntityPrefix.Location = new System.Drawing.Point(16, 145);
+            this.lblEntityPrefix.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblEntityPrefix.Name = "lblEntityPrefix";
             this.lblEntityPrefix.Size = new System.Drawing.Size(51, 13);
             this.lblEntityPrefix.TabIndex = 10;
@@ -934,10 +1024,11 @@
             // txtEntitySchemaName
             // 
             this.txtEntitySchemaName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEntitySchemaName.Location = new System.Drawing.Point(57, 119);
+            this.txtEntitySchemaName.Location = new System.Drawing.Point(105, 143);
+            this.txtEntitySchemaName.Margin = new System.Windows.Forms.Padding(6);
             this.txtEntitySchemaName.MaxLength = 39;
             this.txtEntitySchemaName.Name = "txtEntitySchemaName";
-            this.txtEntitySchemaName.Size = new System.Drawing.Size(155, 20);
+            this.txtEntitySchemaName.Size = new System.Drawing.Size(198, 20);
             this.txtEntitySchemaName.TabIndex = 9;
             this.txtEntitySchemaName.Validating += new System.ComponentModel.CancelEventHandler(this.txtEntitySchemaName_Validating);
             this.txtEntitySchemaName.Validated += new System.EventHandler(this.txtEntitySchemaName_Validated);
@@ -946,7 +1037,8 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(6, 97);
+            this.label13.Location = new System.Drawing.Point(12, 126);
+            this.label13.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(77, 13);
             this.label13.TabIndex = 8;
@@ -959,9 +1051,10 @@
             this.ddlEntityOwnership.Items.AddRange(new object[] {
             "User or Team",
             "Organization"});
-            this.ddlEntityOwnership.Location = new System.Drawing.Point(6, 217);
+            this.ddlEntityOwnership.Location = new System.Drawing.Point(12, 295);
+            this.ddlEntityOwnership.Margin = new System.Windows.Forms.Padding(6);
             this.ddlEntityOwnership.Name = "ddlEntityOwnership";
-            this.ddlEntityOwnership.Size = new System.Drawing.Size(206, 21);
+            this.ddlEntityOwnership.Size = new System.Drawing.Size(290, 21);
             this.ddlEntityOwnership.TabIndex = 7;
             this.ddlEntityOwnership.Text = "User or Team";
             this.ddlEntityOwnership.Leave += new System.EventHandler(this.ddlEntityOwnership_Leave);
@@ -970,7 +1063,8 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(6, 201);
+            this.label11.Location = new System.Drawing.Point(11, 275);
+            this.label11.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(57, 13);
             this.label11.TabIndex = 6;
@@ -979,11 +1073,12 @@
             // txtEntityDescription
             // 
             this.txtEntityDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEntityDescription.Location = new System.Drawing.Point(6, 158);
+            this.txtEntityDescription.Location = new System.Drawing.Point(12, 196);
+            this.txtEntityDescription.Margin = new System.Windows.Forms.Padding(6);
             this.txtEntityDescription.MaxLength = 200;
             this.txtEntityDescription.Multiline = true;
             this.txtEntityDescription.Name = "txtEntityDescription";
-            this.txtEntityDescription.Size = new System.Drawing.Size(206, 40);
+            this.txtEntityDescription.Size = new System.Drawing.Size(290, 70);
             this.txtEntityDescription.TabIndex = 5;
             this.txtEntityDescription.Validated += new System.EventHandler(this.txtEntityDescription_Validated);
             // 
@@ -991,7 +1086,8 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 142);
+            this.label5.Location = new System.Drawing.Point(11, 174);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 13);
             this.label5.TabIndex = 4;
@@ -1000,10 +1096,11 @@
             // txtEntityPluralName
             // 
             this.txtEntityPluralName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEntityPluralName.Location = new System.Drawing.Point(6, 69);
+            this.txtEntityPluralName.Location = new System.Drawing.Point(13, 94);
+            this.txtEntityPluralName.Margin = new System.Windows.Forms.Padding(6);
             this.txtEntityPluralName.MaxLength = 50;
             this.txtEntityPluralName.Name = "txtEntityPluralName";
-            this.txtEntityPluralName.Size = new System.Drawing.Size(206, 20);
+            this.txtEntityPluralName.Size = new System.Drawing.Size(290, 20);
             this.txtEntityPluralName.TabIndex = 3;
             this.txtEntityPluralName.Validating += new System.ComponentModel.CancelEventHandler(this.txtEntityPluralName_Validating);
             this.txtEntityPluralName.Validated += new System.EventHandler(this.txtEntityPluralName_Validated);
@@ -1012,7 +1109,8 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 52);
+            this.label4.Location = new System.Drawing.Point(12, 71);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 13);
             this.label4.TabIndex = 2;
@@ -1022,7 +1120,8 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 12);
+            this.label3.Location = new System.Drawing.Point(11, 22);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 13);
             this.label3.TabIndex = 1;
@@ -1031,10 +1130,11 @@
             // txtEntityDisplayName
             // 
             this.txtEntityDisplayName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEntityDisplayName.Location = new System.Drawing.Point(6, 28);
+            this.txtEntityDisplayName.Location = new System.Drawing.Point(12, 42);
+            this.txtEntityDisplayName.Margin = new System.Windows.Forms.Padding(6);
             this.txtEntityDisplayName.MaxLength = 50;
             this.txtEntityDisplayName.Name = "txtEntityDisplayName";
-            this.txtEntityDisplayName.Size = new System.Drawing.Size(206, 20);
+            this.txtEntityDisplayName.Size = new System.Drawing.Size(290, 20);
             this.txtEntityDisplayName.TabIndex = 0;
             this.txtEntityDisplayName.Validating += new System.ComponentModel.CancelEventHandler(this.txtEntityDisplayName_Validating);
             this.txtEntityDisplayName.Validated += new System.EventHandler(this.txtEntityDisplayName_Validated);
@@ -1044,9 +1144,10 @@
             this.clbTables.CheckOnClick = true;
             this.clbTables.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clbTables.FormattingEnabled = true;
-            this.clbTables.Location = new System.Drawing.Point(7, 14);
+            this.clbTables.Location = new System.Drawing.Point(13, 26);
+            this.clbTables.Margin = new System.Windows.Forms.Padding(6);
             this.clbTables.Name = "clbTables";
-            this.clbTables.Size = new System.Drawing.Size(165, 244);
+            this.clbTables.Size = new System.Drawing.Size(299, 259);
             this.clbTables.TabIndex = 9;
             this.clbTables.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.clbTables_ItemCheck);
             this.clbTables.SelectedIndexChanged += new System.EventHandler(this.clbTables_SelectedIndexChanged);
@@ -1056,9 +1157,11 @@
             this.grpFields.Controls.Add(this.grpField);
             this.grpFields.Controls.Add(this.clbFields);
             this.grpFields.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpFields.Location = new System.Drawing.Point(471, 12);
+            this.grpFields.Location = new System.Drawing.Point(792, 28);
+            this.grpFields.Margin = new System.Windows.Forms.Padding(6);
             this.grpFields.Name = "grpFields";
-            this.grpFields.Size = new System.Drawing.Size(426, 344);
+            this.grpFields.Padding = new System.Windows.Forms.Padding(6);
+            this.grpFields.Size = new System.Drawing.Size(643, 507);
             this.grpFields.TabIndex = 25;
             this.grpFields.TabStop = false;
             this.grpFields.Text = "Step 3";
@@ -1075,9 +1178,11 @@
             this.grpField.Controls.Add(this.label7);
             this.grpField.Controls.Add(this.txtFieldDisplayName);
             this.grpField.Controls.Add(this.label6);
-            this.grpField.Location = new System.Drawing.Point(177, 16);
+            this.grpField.Location = new System.Drawing.Point(325, 30);
+            this.grpField.Margin = new System.Windows.Forms.Padding(6);
             this.grpField.Name = "grpField";
-            this.grpField.Size = new System.Drawing.Size(238, 319);
+            this.grpField.Padding = new System.Windows.Forms.Padding(6);
+            this.grpField.Size = new System.Drawing.Size(308, 589);
             this.grpField.TabIndex = 12;
             this.grpField.TabStop = false;
             this.grpField.Visible = false;
@@ -1086,7 +1191,8 @@
             // 
             this.label38.AutoSize = true;
             this.label38.ForeColor = System.Drawing.Color.Red;
-            this.label38.Location = new System.Drawing.Point(79, 52);
+            this.label38.Location = new System.Drawing.Point(87, 96);
+            this.label38.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(11, 13);
             this.label38.TabIndex = 27;
@@ -1096,7 +1202,8 @@
             // 
             this.label37.AutoSize = true;
             this.label37.ForeColor = System.Drawing.Color.Red;
-            this.label37.Location = new System.Drawing.Point(74, 12);
+            this.label37.Location = new System.Drawing.Point(87, 22);
+            this.label37.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(11, 13);
             this.label37.TabIndex = 26;
@@ -1109,9 +1216,11 @@
             this.grpFieldFormatSingle.Controls.Add(this.label10);
             this.grpFieldFormatSingle.Controls.Add(this.ddlFieldSingleFormat);
             this.grpFieldFormatSingle.Controls.Add(this.label9);
-            this.grpFieldFormatSingle.Location = new System.Drawing.Point(6, 170);
+            this.grpFieldFormatSingle.Location = new System.Drawing.Point(12, 252);
+            this.grpFieldFormatSingle.Margin = new System.Windows.Forms.Padding(6);
             this.grpFieldFormatSingle.Name = "grpFieldFormatSingle";
-            this.grpFieldFormatSingle.Size = new System.Drawing.Size(202, 127);
+            this.grpFieldFormatSingle.Padding = new System.Windows.Forms.Padding(6);
+            this.grpFieldFormatSingle.Size = new System.Drawing.Size(267, 159);
             this.grpFieldFormatSingle.TabIndex = 25;
             this.grpFieldFormatSingle.TabStop = false;
             this.grpFieldFormatSingle.Tag = "";
@@ -1121,7 +1230,8 @@
             // 
             this.label39.AutoSize = true;
             this.label39.ForeColor = System.Drawing.Color.Red;
-            this.label39.Location = new System.Drawing.Point(86, 47);
+            this.label39.Location = new System.Drawing.Point(87, 87);
+            this.label39.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(11, 13);
             this.label39.TabIndex = 28;
@@ -1130,10 +1240,11 @@
             // txtFieldSingleMaxLength
             // 
             this.txtFieldSingleMaxLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFieldSingleMaxLength.Location = new System.Drawing.Point(4, 63);
+            this.txtFieldSingleMaxLength.Location = new System.Drawing.Point(7, 116);
+            this.txtFieldSingleMaxLength.Margin = new System.Windows.Forms.Padding(6);
             this.txtFieldSingleMaxLength.MaxLength = 4;
             this.txtFieldSingleMaxLength.Name = "txtFieldSingleMaxLength";
-            this.txtFieldSingleMaxLength.Size = new System.Drawing.Size(172, 20);
+            this.txtFieldSingleMaxLength.Size = new System.Drawing.Size(227, 20);
             this.txtFieldSingleMaxLength.TabIndex = 24;
             this.txtFieldSingleMaxLength.Text = "100";
             this.txtFieldSingleMaxLength.Validating += new System.ComponentModel.CancelEventHandler(this.txtFieldSingleMaxLength_Validating);
@@ -1143,7 +1254,8 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(4, 47);
+            this.label10.Location = new System.Drawing.Point(7, 87);
+            this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(87, 13);
             this.label10.TabIndex = 2;
@@ -1153,9 +1265,10 @@
             // 
             this.ddlFieldSingleFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddlFieldSingleFormat.FormattingEnabled = true;
-            this.ddlFieldSingleFormat.Location = new System.Drawing.Point(4, 25);
+            this.ddlFieldSingleFormat.Location = new System.Drawing.Point(7, 46);
+            this.ddlFieldSingleFormat.Margin = new System.Windows.Forms.Padding(6);
             this.ddlFieldSingleFormat.Name = "ddlFieldSingleFormat";
-            this.ddlFieldSingleFormat.Size = new System.Drawing.Size(172, 21);
+            this.ddlFieldSingleFormat.Size = new System.Drawing.Size(227, 21);
             this.ddlFieldSingleFormat.TabIndex = 1;
             this.ddlFieldSingleFormat.SelectedIndexChanged += new System.EventHandler(this.ddlFieldSingleFormat_SelectedIndexChanged);
             // 
@@ -1163,7 +1276,8 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(4, 10);
+            this.label9.Location = new System.Drawing.Point(7, 18);
+            this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(39, 13);
             this.label9.TabIndex = 0;
@@ -1173,7 +1287,8 @@
             // 
             this.lblFieldPrefix.AutoSize = true;
             this.lblFieldPrefix.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFieldPrefix.Location = new System.Drawing.Point(6, 72);
+            this.lblFieldPrefix.Location = new System.Drawing.Point(11, 133);
+            this.lblFieldPrefix.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblFieldPrefix.Name = "lblFieldPrefix";
             this.lblFieldPrefix.Size = new System.Drawing.Size(51, 13);
             this.lblFieldPrefix.TabIndex = 13;
@@ -1192,9 +1307,10 @@
             "Currency",
             "Multiple Lines of Text",
             "Date and Time"});
-            this.ddlFieldType.Location = new System.Drawing.Point(6, 121);
+            this.ddlFieldType.Location = new System.Drawing.Point(11, 223);
+            this.ddlFieldType.Margin = new System.Windows.Forms.Padding(6);
             this.ddlFieldType.Name = "ddlFieldType";
-            this.ddlFieldType.Size = new System.Drawing.Size(206, 21);
+            this.ddlFieldType.Size = new System.Drawing.Size(289, 21);
             this.ddlFieldType.TabIndex = 5;
             this.ddlFieldType.SelectionChangeCommitted += new System.EventHandler(this.ddlFieldType_SelectionChangeCommitted);
             // 
@@ -1202,7 +1318,8 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(6, 98);
+            this.label8.Location = new System.Drawing.Point(11, 181);
+            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(31, 13);
             this.label8.TabIndex = 4;
@@ -1211,10 +1328,11 @@
             // txtFieldSchemaName
             // 
             this.txtFieldSchemaName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFieldSchemaName.Location = new System.Drawing.Point(57, 72);
+            this.txtFieldSchemaName.Location = new System.Drawing.Point(105, 133);
+            this.txtFieldSchemaName.Margin = new System.Windows.Forms.Padding(6);
             this.txtFieldSchemaName.MaxLength = 39;
             this.txtFieldSchemaName.Name = "txtFieldSchemaName";
-            this.txtFieldSchemaName.Size = new System.Drawing.Size(155, 20);
+            this.txtFieldSchemaName.Size = new System.Drawing.Size(196, 20);
             this.txtFieldSchemaName.TabIndex = 3;
             this.txtFieldSchemaName.Validating += new System.ComponentModel.CancelEventHandler(this.txtFieldSchemaName_Validating);
             this.txtFieldSchemaName.Validated += new System.EventHandler(this.txtFieldSchemaName_Validated);
@@ -1223,7 +1341,8 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 52);
+            this.label7.Location = new System.Drawing.Point(11, 96);
+            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 13);
             this.label7.TabIndex = 2;
@@ -1232,10 +1351,11 @@
             // txtFieldDisplayName
             // 
             this.txtFieldDisplayName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFieldDisplayName.Location = new System.Drawing.Point(6, 28);
+            this.txtFieldDisplayName.Location = new System.Drawing.Point(11, 52);
+            this.txtFieldDisplayName.Margin = new System.Windows.Forms.Padding(6);
             this.txtFieldDisplayName.MaxLength = 50;
             this.txtFieldDisplayName.Name = "txtFieldDisplayName";
-            this.txtFieldDisplayName.Size = new System.Drawing.Size(206, 20);
+            this.txtFieldDisplayName.Size = new System.Drawing.Size(289, 20);
             this.txtFieldDisplayName.TabIndex = 1;
             this.txtFieldDisplayName.Validating += new System.ComponentModel.CancelEventHandler(this.txtFieldDisplayName_Validating);
             this.txtFieldDisplayName.Validated += new System.EventHandler(this.txtFieldDisplayName_Validated);
@@ -1244,7 +1364,8 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 12);
+            this.label6.Location = new System.Drawing.Point(11, 22);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 13);
             this.label6.TabIndex = 0;
@@ -1255,9 +1376,10 @@
             this.clbFields.CheckOnClick = true;
             this.clbFields.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clbFields.FormattingEnabled = true;
-            this.clbFields.Location = new System.Drawing.Point(6, 16);
+            this.clbFields.Location = new System.Drawing.Point(11, 30);
+            this.clbFields.Margin = new System.Windows.Forms.Padding(6);
             this.clbFields.Name = "clbFields";
-            this.clbFields.Size = new System.Drawing.Size(165, 319);
+            this.clbFields.Size = new System.Drawing.Size(299, 454);
             this.clbFields.TabIndex = 11;
             this.clbFields.Visible = false;
             this.clbFields.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.clbFields_ItemCheck);
@@ -1269,9 +1391,11 @@
             this.groupBox4.Controls.Add(this.btnCreateEntity);
             this.groupBox4.Controls.Add(this.btnDelete);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(470, 411);
+            this.groupBox4.Location = new System.Drawing.Point(8, 117);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(426, 52);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(6);
+            this.groupBox4.Size = new System.Drawing.Size(354, 64);
             this.groupBox4.TabIndex = 26;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Step 6";
@@ -1280,9 +1404,10 @@
             // 
             this.pbSpinner.Image = ((System.Drawing.Image)(resources.GetObject("pbSpinner.Image")));
             this.pbSpinner.InitialImage = null;
-            this.pbSpinner.Location = new System.Drawing.Point(141, 21);
+            this.pbSpinner.Location = new System.Drawing.Point(160, 27);
+            this.pbSpinner.Margin = new System.Windows.Forms.Padding(6);
             this.pbSpinner.Name = "pbSpinner";
-            this.pbSpinner.Size = new System.Drawing.Size(16, 16);
+            this.pbSpinner.Size = new System.Drawing.Size(29, 30);
             this.pbSpinner.TabIndex = 23;
             this.pbSpinner.TabStop = false;
             this.pbSpinner.Visible = false;
@@ -1290,11 +1415,14 @@
             // grpOptions
             // 
             this.grpOptions.Controls.Add(this.chkPublish);
+            this.grpOptions.Controls.Add(this.groupBox4);
             this.grpOptions.Controls.Add(this.chkAddNewFields);
             this.grpOptions.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpOptions.Location = new System.Drawing.Point(471, 356);
+            this.grpOptions.Location = new System.Drawing.Point(795, 542);
+            this.grpOptions.Margin = new System.Windows.Forms.Padding(6);
             this.grpOptions.Name = "grpOptions";
-            this.grpOptions.Size = new System.Drawing.Size(426, 52);
+            this.grpOptions.Padding = new System.Windows.Forms.Padding(6);
+            this.grpOptions.Size = new System.Drawing.Size(332, 200);
             this.grpOptions.TabIndex = 27;
             this.grpOptions.TabStop = false;
             this.grpOptions.Text = "Step 5";
@@ -1303,7 +1431,8 @@
             // 
             this.chkPublish.AutoSize = true;
             this.chkPublish.Enabled = false;
-            this.chkPublish.Location = new System.Drawing.Point(157, 19);
+            this.chkPublish.Location = new System.Drawing.Point(17, 75);
+            this.chkPublish.Margin = new System.Windows.Forms.Padding(6);
             this.chkPublish.Name = "chkPublish";
             this.chkPublish.Size = new System.Drawing.Size(171, 17);
             this.chkPublish.TabIndex = 1;
@@ -1314,7 +1443,8 @@
             // 
             this.chkAddNewFields.AutoSize = true;
             this.chkAddNewFields.Enabled = false;
-            this.chkAddNewFields.Location = new System.Drawing.Point(6, 19);
+            this.chkAddNewFields.Location = new System.Drawing.Point(19, 34);
+            this.chkAddNewFields.Margin = new System.Windows.Forms.Padding(6);
             this.chkAddNewFields.Name = "chkAddNewFields";
             this.chkAddNewFields.Size = new System.Drawing.Size(123, 17);
             this.chkAddNewFields.TabIndex = 0;
@@ -1332,9 +1462,11 @@
             this.grpRelationships.Controls.Add(this.ddlRelationshipType);
             this.grpRelationships.Controls.Add(this.ddlRelationshipSecondary);
             this.grpRelationships.Controls.Add(this.ddlRelationshipPrimary);
-            this.grpRelationships.Location = new System.Drawing.Point(905, 12);
+            this.grpRelationships.Location = new System.Drawing.Point(1447, 22);
+            this.grpRelationships.Margin = new System.Windows.Forms.Padding(6);
             this.grpRelationships.Name = "grpRelationships";
-            this.grpRelationships.Size = new System.Drawing.Size(259, 451);
+            this.grpRelationships.Padding = new System.Windows.Forms.Padding(6);
+            this.grpRelationships.Size = new System.Drawing.Size(475, 682);
             this.grpRelationships.TabIndex = 28;
             this.grpRelationships.TabStop = false;
             this.grpRelationships.Text = "Step 4";
@@ -1342,7 +1474,8 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(7, 92);
+            this.label32.Location = new System.Drawing.Point(13, 113);
+            this.label32.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(73, 13);
             this.label32.TabIndex = 8;
@@ -1351,7 +1484,8 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(7, 60);
+            this.label31.Location = new System.Drawing.Point(13, 80);
+            this.label31.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(70, 13);
             this.label31.TabIndex = 7;
@@ -1360,7 +1494,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 25);
+            this.label2.Location = new System.Drawing.Point(13, 46);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 13);
             this.label2.TabIndex = 6;
@@ -1369,9 +1504,10 @@
             // btnRelationshipRemove
             // 
             this.btnRelationshipRemove.Enabled = false;
-            this.btnRelationshipRemove.Location = new System.Drawing.Point(134, 124);
+            this.btnRelationshipRemove.Location = new System.Drawing.Point(161, 147);
+            this.btnRelationshipRemove.Margin = new System.Windows.Forms.Padding(6);
             this.btnRelationshipRemove.Name = "btnRelationshipRemove";
-            this.btnRelationshipRemove.Size = new System.Drawing.Size(117, 23);
+            this.btnRelationshipRemove.Size = new System.Drawing.Size(127, 27);
             this.btnRelationshipRemove.TabIndex = 5;
             this.btnRelationshipRemove.Text = "Remove Relationship";
             this.btnRelationshipRemove.UseVisualStyleBackColor = true;
@@ -1380,9 +1516,10 @@
             // btnRelationshipAdd
             // 
             this.btnRelationshipAdd.Enabled = false;
-            this.btnRelationshipAdd.Location = new System.Drawing.Point(7, 124);
+            this.btnRelationshipAdd.Location = new System.Drawing.Point(5, 147);
+            this.btnRelationshipAdd.Margin = new System.Windows.Forms.Padding(6);
             this.btnRelationshipAdd.Name = "btnRelationshipAdd";
-            this.btnRelationshipAdd.Size = new System.Drawing.Size(117, 23);
+            this.btnRelationshipAdd.Size = new System.Drawing.Size(127, 27);
             this.btnRelationshipAdd.TabIndex = 4;
             this.btnRelationshipAdd.Text = "Add Relationship";
             this.btnRelationshipAdd.UseVisualStyleBackColor = true;
@@ -1391,9 +1528,10 @@
             // lstRelationships
             // 
             this.lstRelationships.FormattingEnabled = true;
-            this.lstRelationships.Location = new System.Drawing.Point(7, 162);
+            this.lstRelationships.Location = new System.Drawing.Point(13, 186);
+            this.lstRelationships.Margin = new System.Windows.Forms.Padding(6);
             this.lstRelationships.Name = "lstRelationships";
-            this.lstRelationships.Size = new System.Drawing.Size(244, 277);
+            this.lstRelationships.Size = new System.Drawing.Size(275, 472);
             this.lstRelationships.TabIndex = 3;
             this.lstRelationships.SelectedIndexChanged += new System.EventHandler(this.lstRelationships_SelectedIndexChanged);
             // 
@@ -1405,9 +1543,10 @@
             "",
             "1:N Relationship",
             "N:N Relationship"});
-            this.ddlRelationshipType.Location = new System.Drawing.Point(125, 25);
+            this.ddlRelationshipType.Location = new System.Drawing.Point(126, 44);
+            this.ddlRelationshipType.Margin = new System.Windows.Forms.Padding(6);
             this.ddlRelationshipType.Name = "ddlRelationshipType";
-            this.ddlRelationshipType.Size = new System.Drawing.Size(126, 21);
+            this.ddlRelationshipType.Size = new System.Drawing.Size(162, 21);
             this.ddlRelationshipType.TabIndex = 2;
             this.ddlRelationshipType.SelectedIndexChanged += new System.EventHandler(this.ddlRelationshipType_SelectedIndexChanged);
             // 
@@ -1415,9 +1554,10 @@
             // 
             this.ddlRelationshipSecondary.Enabled = false;
             this.ddlRelationshipSecondary.FormattingEnabled = true;
-            this.ddlRelationshipSecondary.Location = new System.Drawing.Point(99, 92);
+            this.ddlRelationshipSecondary.Location = new System.Drawing.Point(126, 110);
+            this.ddlRelationshipSecondary.Margin = new System.Windows.Forms.Padding(6);
             this.ddlRelationshipSecondary.Name = "ddlRelationshipSecondary";
-            this.ddlRelationshipSecondary.Size = new System.Drawing.Size(152, 21);
+            this.ddlRelationshipSecondary.Size = new System.Drawing.Size(162, 21);
             this.ddlRelationshipSecondary.TabIndex = 1;
             this.ddlRelationshipSecondary.SelectionChangeCommitted += new System.EventHandler(this.ddlRelationshipSecondary_SelectionChangeCommitted);
             // 
@@ -1425,9 +1565,10 @@
             // 
             this.ddlRelationshipPrimary.Enabled = false;
             this.ddlRelationshipPrimary.FormattingEnabled = true;
-            this.ddlRelationshipPrimary.Location = new System.Drawing.Point(99, 60);
+            this.ddlRelationshipPrimary.Location = new System.Drawing.Point(126, 77);
+            this.ddlRelationshipPrimary.Margin = new System.Windows.Forms.Padding(6);
             this.ddlRelationshipPrimary.Name = "ddlRelationshipPrimary";
-            this.ddlRelationshipPrimary.Size = new System.Drawing.Size(152, 21);
+            this.ddlRelationshipPrimary.Size = new System.Drawing.Size(162, 21);
             this.ddlRelationshipPrimary.TabIndex = 0;
             this.ddlRelationshipPrimary.SelectionChangeCommitted += new System.EventHandler(this.ddlRelationshipPrimary_SelectionChangeCommitted);
             // 
@@ -1443,13 +1584,10 @@
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(1174, 498);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.ClientSize = new System.Drawing.Size(1880, 1061);
             this.Controls.Add(this.grpRelationships);
             this.Controls.Add(this.grpOptions);
-            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.grpFieldMultiple);
             this.Controls.Add(this.grpFields);
             this.Controls.Add(this.grpTables);
@@ -1461,8 +1599,8 @@
             this.Controls.Add(this.grpConnection);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmMain";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "XRM Speedy v.02";
             this.Load += new System.EventHandler(this.frmMain_Load);
@@ -1620,6 +1758,7 @@
         private System.Windows.Forms.TextBox txtFieldWholeMinimum;
         private System.Windows.Forms.Label label18;
         private System.ComponentModel.BackgroundWorker bgWorkerDelete;
+        private System.Windows.Forms.Panel panelConnnectDB;
     }
 }
 

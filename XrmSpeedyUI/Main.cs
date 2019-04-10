@@ -85,7 +85,8 @@ namespace XrmSpeedyUI
 
         private void btnAuthenticate_Click(object sender, EventArgs e)
         {
-            CdsLogin cdsLoginControl = new CdsLogin();
+            var cdsLoginControl = new CdsLogin();
+
             cdsLoginControl.ConnectionToCdsCompleted += CdsLoginControl_ConnectionToCdsCompleted;
 
             // Show the dialog. 
@@ -132,7 +133,7 @@ namespace XrmSpeedyUI
             switch (cboDatasource.SelectedItem.ToString())
             {
                 case "SQL Server":
-                    Connection_SQLServer cSQLServer = (Connection_SQLServer)grpConnection.Controls["cSQLServer"];
+                    Connection_SQLServer cSQLServer = (Connection_SQLServer)panelConnnectDB.Controls["cSQLServer"];
                     if (string.IsNullOrEmpty(((TextBox)cSQLServer.Controls["txtConnectionServer"]).Text))
                     {
                         MessageBox.Show("Please enter a server name", "Error");
@@ -153,7 +154,7 @@ namespace XrmSpeedyUI
                     }
                     break;
                 case "MS Access":
-                    Connection_Access cAccess = (Connection_Access)grpConnection.Controls["cAccess"];
+                    Connection_Access cAccess = (Connection_Access)panelConnnectDB.Controls["cAccess"];
                     if (string.IsNullOrEmpty(((TextBox)cAccess.Controls["txtLocation"]).Text))
                     {
                         MessageBox.Show("Please enter a location", "Error");
@@ -177,7 +178,7 @@ namespace XrmSpeedyUI
                     List<string> sqlTables = sqlProvier.GetTableNames();
                     if (sqlTables.Count() > 0)
                         DisplayTables(sqlTables);
-                    Connection_SQLServer cSQLServer = (Connection_SQLServer)grpConnection.Controls["cSQLServer"];
+                    Connection_SQLServer cSQLServer = (Connection_SQLServer)panelConnnectDB.Controls["cSQLServer"];
                     cSQLServer.Controls["txtConnectionServer"].Enabled = false;
                     cSQLServer.Controls["txtConnectionDatabase"].Enabled = false;
                     cSQLServer.Controls["chkConnectionIntegrated"].Enabled = false;
@@ -189,7 +190,7 @@ namespace XrmSpeedyUI
                     List<string> accessTables = accessProvier.GetTableNames();
                     if (accessTables.Count() > 0)
                         DisplayTables(accessTables);
-                    Connection_Access cAccess = (Connection_Access)grpConnection.Controls["cAccess"];
+                    Connection_Access cAccess = (Connection_Access)panelConnnectDB.Controls["cAccess"];
                     cAccess.Controls["txtLocation"].Enabled = false;
                     cAccess.Controls["btnBrowse"].Enabled = false;
                     cAccess.Controls["chkPassword"].Enabled = false;
@@ -207,11 +208,7 @@ namespace XrmSpeedyUI
 
         private void cboDatasource_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (Control c in grpConnection.Controls)
-            {
-                if (c is UserControl)
-                    grpConnection.Controls.Remove(c);
-            }
+            panelConnnectDB.Controls.Clear();
 
             if (cboDatasource.SelectedIndex == 0)
             {
@@ -226,13 +223,13 @@ namespace XrmSpeedyUI
                 case "SQL Server":
                     Connection_SQLServer cSQLServer = new Connection_SQLServer();
                     cSQLServer.Name = "cSQLServer";
-                    grpConnection.Controls.Add(cSQLServer);
+                    panelConnnectDB.Controls.Add(cSQLServer);
                     cSQLServer.Location = new Point(172, 46);
                     break;
                 case "MS Access":
                     Connection_Access cAccess = new Connection_Access();
                     cAccess.Name = "cAccess";
-                    grpConnection.Controls.Add(cAccess);
+                    panelConnnectDB.Controls.Add(cAccess);
                     cAccess.Location = new Point(172, 46);
                     break;
             }
@@ -1997,11 +1994,10 @@ namespace XrmSpeedyUI
 
             if (name == string.Empty)
             {
-                name = NewEntities.Where(e => e.EntityMetadata.SchemaName == logicalName).FirstOrDefault().EntityMetadata.DisplayName
+                name = NewEntities.Where(e => e.EntityMetadata.SchemaName == logicalName).FirstOrDefault()?.EntityMetadata?.DisplayName
                     .LocalizedLabels.Where(l => l.LanguageCode == 1033).FirstOrDefault().Label;
             }
-
-            return name;
+            return (name == null) ? logicalName: name;
         }
 
         private void btnRelationshipRemove_Click(object sender, EventArgs e)

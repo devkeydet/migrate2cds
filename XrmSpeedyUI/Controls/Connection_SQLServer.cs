@@ -45,7 +45,7 @@ namespace XrmSpeedy.Controls
                 conn = string.Format("Data Source={0};Initial Catalog={1};Integrated Security=SSPI;", txtConnectionServer.Text.Trim(),
                     txtConnectionDatabase.Text.Trim());
 
-            frmMain parent = (frmMain)this.Parent.Parent;
+            frmMain parent = (frmMain)this.Parent.Parent.Parent;
             parent.ConnectionString = conn;
         }
 

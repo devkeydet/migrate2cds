@@ -42,7 +42,8 @@ namespace XrmSpeedy.Controls
                 conn = string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Persist Security Info=False;",
                     txtLocation.Text.Trim());
 
-            frmMain parent = (frmMain)this.Parent.Parent;
+            frmMain parent = (frmMain)this.ParentForm;
+            
             parent.ConnectionString = conn;
         }
 
