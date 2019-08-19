@@ -2,11 +2,19 @@
 using System.Collections.Generic;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Metadata;
+using System.ComponentModel;
 
 namespace CDSTools
 {
     public class MigrateDataBase
     {
+        #region Options 
+        /// <summary>
+        /// Flag indicating whether to remove extra prefixes when creating relationships 
+        /// </summary>
+        public bool RemoveExtraPrefixes { get; set; } = true;
+
+        #endregion 
         public int LanguageCode { get; set; } = 1033;
         public bool AddNewFields { get; set; } = true;
         public IDbProvider Provider { get; private set; }
@@ -71,11 +79,18 @@ namespace CDSTools
                 }
             }
         }
+
+        /// <summary>
+        ///  Add relationship using schema name of entity
+        /// </summary>
+        /// <param name="entity1"></param>
+        /// <param name="entity2"></param>
+        /// <param name="relationshipType"></param>
         public void AddRelationship(MigrateEntity entity1, MigrateEntity entity2, RelationshipType relationshipType)
         {
             var relationship = new MigrateRelationship(entity1.SchemaName, entity2.SchemaName, 
                 entity1.DisplayName, entity2.DisplayName, 
-                relationshipType, Prefix, LanguageCode);
+                relationshipType, Prefix, LanguageCode, RemoveExtraPrefixes);
 
             NewRelationships.Add(relationship);
 
@@ -87,6 +102,13 @@ namespace CDSTools
 
         }
 
+        /// <summary>
+        /// Add a new relationship to the collection 
+        /// </summary>
+        /// <param name="service"></param>
+        /// <param name="entity1Name"></param>
+        /// <param name="entity2Name"></param>
+        /// <param name="relationshipType"></param>
         public void AddRelationship(IOrganizationService service, string entity1Name, string entity2Name, RelationshipType relationshipType)
         {
             var entity1 = NewEntities.Where(n => n.OriginalTable == entity1Name).FirstOrDefault();
@@ -143,7 +165,11 @@ namespace CDSTools
         }
         #endregion
         #region CRM CRUD Actions 
-
+        /// <summary>
+        /// Delete entities from CDS
+        /// </summary>
+        /// <param name="service"></param>
+        /// <param name="addNewFields"></param>
         private void DeleteEntities(IOrganizationService service, bool addNewFields)
         {
             var ent = new CDSEntity();
@@ -180,19 +206,22 @@ namespace CDSTools
             var fxml = new CDSFormXML();
 
             bool result = false;
-            foreach (var entity in NewEntities.Where(n => n.Import == true))
+            var importEntities = NewEntities.Where(n => n.Import == true).ToList();
+
+            foreach (var entity in importEntities)
             {
                 result = ent.CreateEntity(service, entity, LanguageCode);
-                if (!result)
-                {
+                if (!result) {
                     // MessageBox.Show("Error Creating Items");
                     return;
                 }
             }
 
+            // capture entities that have been created
             CreatedEntities = NewEntities.Where(n => n.Import == true).ToList();
 
-            foreach (var relationship in NewRelationships)
+            var newRelations = NewRelationships.Where(r => r.Import == true).ToList();
+            foreach (var relationship in newRelations)
             {
                 switch (relationship.RelationType)
                 {
@@ -204,8 +233,7 @@ namespace CDSTools
                         break;
                 }
 
-                if (!result)
-                {
+                if (!result) {
                     // MessageBox.Show("Error Creating Relationships");
                     return;
                 }
@@ -219,6 +247,7 @@ namespace CDSTools
                 }
             }
 
+            // capture relations that have been created
             CreatedRelationships = NewRelationships;
 
             if (publish) {
@@ -229,7 +258,14 @@ namespace CDSTools
         #endregion
 
         #region Helper functions
-        public string GetEntityDisplayName(EntityMetadata entity)
+
+        /// <summary>
+        /// Helper method to display entity display name from DisplayName object 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="includeSchemaName"></param>
+        /// <returns></returns>
+        public string GetEntityDisplayName(EntityMetadata entity, bool includeSchemaName = true)
         {
             string displayName = entity.SchemaName;
 
@@ -237,13 +273,24 @@ namespace CDSTools
 
             if (label != null)
             {
-                displayName = $"{label.Label} ({entity.SchemaName})";
+                if (includeSchemaName) {
+                    displayName = $"{label.Label} ({entity.SchemaName})";
+                }
+                else {
+                    displayName = label.Label;
+                }
             }
 
             return displayName;
         }
 
-
+        /// <summary>
+        /// Validate whether schema name is uuni
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="prefix"></param>
+        /// <param name="table"></param>
+        /// <returns></returns>
         private string ValidateFieldSchemaName(string name, string prefix, string table)
         {
             if ((prefix + "_" + name).ToLower() == (prefix + "_" + table + "id").ToLower())

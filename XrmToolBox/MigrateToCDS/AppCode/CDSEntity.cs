@@ -1,15 +1,23 @@
-﻿using Microsoft.Crm.Sdk.Messages;
+﻿using System.Linq;
+using System.Collections.Generic;
+using System.ServiceModel;
+
+using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Metadata;
-using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel;
 
 namespace CDSTools
 {
     public class CDSEntity : ICDSEntity
     {
+        /// <summary>
+        /// Helper method for creating a new Entity in CDS
+        /// </summary>
+        /// <param name="service"></param>
+        /// <param name="entity"></param>
+        /// <param name="languageCode"></param>
+        /// <returns></returns>
         public bool CreateEntity(IOrganizationService service, MigrateEntity entity, int languageCode)
         {
             try
@@ -41,6 +49,14 @@ namespace CDSTools
             }
         }
 
+        /// <summary>
+        /// Helper method for creating one to many relations 
+        /// </summary>
+        /// <param name="service"></param>
+        /// <param name="relationship"></param>
+        /// <param name="prefix"></param>
+        /// <param name="languageCode"></param>
+        /// <returns></returns>
         public bool CreateOneToMany(IOrganizationService service, MigrateRelationship relationship, string prefix, int languageCode)
         {
             try
@@ -83,6 +99,14 @@ namespace CDSTools
             }
         }
 
+        /// <summary>
+        /// Helper method for creating many to many relations 
+        /// </summary>
+        /// <param name="service"></param>
+        /// <param name="relationship"></param>
+        /// <param name="prefix"></param>
+        /// <param name="languageCode"></param>
+        /// <returns></returns>
         public bool CreateManyToMany(IOrganizationService service, MigrateRelationship relationship, string prefix, int languageCode)
         {
             try
@@ -125,6 +149,13 @@ namespace CDSTools
             }
         }
 
+        /// <summary>
+        /// Helper method for creating attributes in the system 
+        /// </summary>
+        /// <param name="service"></param>
+        /// <param name="entity"></param>
+        /// <param name="languageCode"></param>
+        /// <returns></returns>
         private bool CreateAttributes(IOrganizationService service, MigrateEntity entity, int languageCode)
         {
             try

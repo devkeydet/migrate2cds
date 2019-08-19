@@ -31,38 +31,44 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MigrateToCDSControl));
             this.toolStripMenu = new System.Windows.Forms.ToolStrip();
             this.tsbClose = new System.Windows.Forms.ToolStripButton();
-            this.tssSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.tsComboPrefix = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsButtonConnect = new System.Windows.Forms.ToolStripButton();
-            this.tsButtonReload = new System.Windows.Forms.ToolStripButton();
-            this.ChkListTables = new System.Windows.Forms.CheckedListBox();
-            this.labelTablesFound = new System.Windows.Forms.Label();
-            this.ChkListAttributes = new System.Windows.Forms.CheckedListBox();
-            this.propGridAtribute = new System.Windows.Forms.PropertyGrid();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.checkedListTables = new System.Windows.Forms.CheckedListBox();
             this.panelOptions = new System.Windows.Forms.Panel();
+            this.labelCDSConnection = new System.Windows.Forms.Label();
+            this.labelConnect = new System.Windows.Forms.Label();
+            this.buttonConnect = new System.Windows.Forms.Button();
+            this.buttonReload = new System.Windows.Forms.Button();
             this.labelMainInstruct = new System.Windows.Forms.Label();
-            this.chkAddNewFields = new System.Windows.Forms.CheckBox();
+            this.textBoxDBConnection = new System.Windows.Forms.TextBox();
+            this.labelPrefix = new System.Windows.Forms.Label();
+            this.comboPrefix = new System.Windows.Forms.ComboBox();
+            this.checkAddNewFields = new System.Windows.Forms.CheckBox();
             this.labelTableProps = new System.Windows.Forms.Label();
-            this.labelTableAttributes = new System.Windows.Forms.Label();
-            this.propGridTable = new System.Windows.Forms.PropertyGrid();
-            this.labelAttribProps = new System.Windows.Forms.Label();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPageTableSelections = new System.Windows.Forms.TabPage();
-            this.splitContainerTablesMain = new System.Windows.Forms.SplitContainer();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.splitterAttribs = new System.Windows.Forms.Splitter();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelAttribProps = new System.Windows.Forms.Panel();
+            this.propGridAtribute = new System.Windows.Forms.PropertyGrid();
+            this.labelAttribProps = new System.Windows.Forms.Label();
+            this.splitterAttribList = new System.Windows.Forms.Splitter();
+            this.panelAttribList = new System.Windows.Forms.Panel();
+            this.checkedListAttributes = new System.Windows.Forms.CheckedListBox();
+            this.labelTableAttributes = new System.Windows.Forms.Label();
             this.splitterTableProps = new System.Windows.Forms.Splitter();
             this.panelTableProps = new System.Windows.Forms.Panel();
+            this.propGridTable = new System.Windows.Forms.PropertyGrid();
             this.labelTableDetails = new System.Windows.Forms.Label();
+            this.splitterTableList = new System.Windows.Forms.Splitter();
+            this.panelTableList = new System.Windows.Forms.Panel();
+            this.labelTablesFound = new System.Windows.Forms.Label();
             this.tabPageRelationships = new System.Windows.Forms.TabPage();
-            this.lstRelationships = new System.Windows.Forms.ListBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btnRelationshipRemove = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnRelationshipAdd = new System.Windows.Forms.Button();
+            this.panelRelationProps = new System.Windows.Forms.Panel();
+            this.propGridRelation = new System.Windows.Forms.PropertyGrid();
+            this.flowPanelRemoveRelation = new System.Windows.Forms.FlowLayoutPanel();
+            this.buttonRemoveRelationship = new System.Windows.Forms.Button();
+            this.splitterRelationList = new System.Windows.Forms.Splitter();
+            this.listRelationships = new System.Windows.Forms.ListBox();
+            this.panelAddRelation = new System.Windows.Forms.Panel();
+            this.buttonAddRelationship = new System.Windows.Forms.Button();
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -71,8 +77,9 @@
             this.comboRelationshipPrimary = new System.Windows.Forms.ComboBox();
             this.labelRelationInstructions = new System.Windows.Forms.Label();
             this.tabPageCommit = new System.Windows.Forms.TabPage();
+            this.buttonCreate = new System.Windows.Forms.Button();
             this.RichTextSummary = new System.Windows.Forms.RichTextBox();
-            this.chkPublish = new System.Windows.Forms.CheckBox();
+            this.checkPublish = new System.Windows.Forms.CheckBox();
             this.statusStripMain = new System.Windows.Forms.StatusStrip();
             this.tsLabelConnString = new System.Windows.Forms.ToolStripLabel();
             this.tstxtConnectionString = new System.Windows.Forms.ToolStripTextBox();
@@ -80,16 +87,14 @@
             this.panelOptions.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.tabPageTableSelections.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerTablesMain)).BeginInit();
-            this.splitContainerTablesMain.Panel1.SuspendLayout();
-            this.splitContainerTablesMain.Panel2.SuspendLayout();
-            this.splitContainerTablesMain.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panelAttribProps.SuspendLayout();
+            this.panelAttribList.SuspendLayout();
             this.panelTableProps.SuspendLayout();
+            this.panelTableList.SuspendLayout();
             this.tabPageRelationships.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panelRelationProps.SuspendLayout();
+            this.flowPanelRemoveRelation.SuspendLayout();
+            this.panelAddRelation.SuspendLayout();
             this.tabPageCommit.SuspendLayout();
             this.statusStripMain.SuspendLayout();
             this.SuspendLayout();
@@ -99,16 +104,10 @@
             this.toolStripMenu.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.toolStripMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbClose,
-            this.tssSeparator1,
-            this.toolStripLabel1,
-            this.tsComboPrefix,
-            this.toolStripSeparator3,
-            this.tsButtonConnect,
-            this.tsButtonReload});
+            this.toolStripSeparator});
             this.toolStripMenu.Location = new System.Drawing.Point(0, 0);
             this.toolStripMenu.Name = "toolStripMenu";
-            this.toolStripMenu.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.toolStripMenu.Size = new System.Drawing.Size(2059, 38);
+            this.toolStripMenu.Size = new System.Drawing.Size(2059, 40);
             this.toolStripMenu.TabIndex = 4;
             this.toolStripMenu.Text = "toolStrip1";
             // 
@@ -116,139 +115,132 @@
             // 
             this.tsbClose.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.tsbClose.Name = "tsbClose";
-            this.tsbClose.Size = new System.Drawing.Size(67, 35);
+            this.tsbClose.Size = new System.Drawing.Size(67, 34);
             this.tsbClose.Text = "Close";
             this.tsbClose.Click += new System.EventHandler(this.tsbClose_Click);
             // 
-            // tssSeparator1
+            // toolStripSeparator
             // 
-            this.tssSeparator1.Name = "tssSeparator1";
-            this.tssSeparator1.Size = new System.Drawing.Size(6, 38);
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 40);
             // 
-            // toolStripLabel1
+            // checkedListTables
             // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(90, 35);
-            this.toolStripLabel1.Text = "Prefixes:";
-            // 
-            // tsComboPrefix
-            // 
-            this.tsComboPrefix.AutoCompleteCustomSource.AddRange(new string[] {
-            "migrate2"});
-            this.tsComboPrefix.Items.AddRange(new object[] {
-            "migrate2"});
-            this.tsComboPrefix.Name = "tsComboPrefix";
-            this.tsComboPrefix.Size = new System.Drawing.Size(219, 38);
-            this.tsComboPrefix.SelectedIndexChanged += new System.EventHandler(this.ComboPrefix_Update);
-            this.tsComboPrefix.TextUpdate += new System.EventHandler(this.ComboPrefix_Update);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 38);
-            // 
-            // tsButtonConnect
-            // 
-            this.tsButtonConnect.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsButtonConnect.Name = "tsButtonConnect";
-            this.tsButtonConnect.Size = new System.Drawing.Size(94, 35);
-            this.tsButtonConnect.Text = "Connect";
-            this.tsButtonConnect.Click += new System.EventHandler(this.ButtonConnect_Click);
-            // 
-            // tsButtonReload
-            // 
-            this.tsButtonReload.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsButtonReload.Enabled = false;
-            this.tsButtonReload.Image = ((System.Drawing.Image)(resources.GetObject("tsButtonReload.Image")));
-            this.tsButtonReload.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsButtonReload.Name = "tsButtonReload";
-            this.tsButtonReload.Size = new System.Drawing.Size(80, 35);
-            this.tsButtonReload.Text = "Reload";
-            this.tsButtonReload.Click += new System.EventHandler(this.tsButtonReload_Click);
-            // 
-            // ChkListTables
-            // 
-            this.ChkListTables.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ChkListTables.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChkListTables.FormattingEnabled = true;
-            this.ChkListTables.Location = new System.Drawing.Point(0, 66);
-            this.ChkListTables.Margin = new System.Windows.Forms.Padding(11);
-            this.ChkListTables.Name = "ChkListTables";
-            this.ChkListTables.Size = new System.Drawing.Size(399, 690);
-            this.ChkListTables.TabIndex = 10;
-            this.ChkListTables.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.ChkList_ItemCheck);
-            this.ChkListTables.SelectedIndexChanged += new System.EventHandler(this.ChkListTables_SelectedIndexChanged);
-            // 
-            // labelTablesFound
-            // 
-            this.labelTablesFound.BackColor = System.Drawing.SystemColors.Info;
-            this.labelTablesFound.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelTablesFound.Location = new System.Drawing.Point(0, 0);
-            this.labelTablesFound.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelTablesFound.Name = "labelTablesFound";
-            this.labelTablesFound.Padding = new System.Windows.Forms.Padding(2);
-            this.labelTablesFound.Size = new System.Drawing.Size(399, 66);
-            this.labelTablesFound.TabIndex = 15;
-            this.labelTablesFound.Text = "Select Tables to be converted to Entities.  Checked Items will be imported.\r\n";
-            // 
-            // ChkListAttributes
-            // 
-            this.ChkListAttributes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ChkListAttributes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChkListAttributes.FormattingEnabled = true;
-            this.ChkListAttributes.Location = new System.Drawing.Point(0, 66);
-            this.ChkListAttributes.Margin = new System.Windows.Forms.Padding(11);
-            this.ChkListAttributes.Name = "ChkListAttributes";
-            this.ChkListAttributes.Size = new System.Drawing.Size(513, 690);
-            this.ChkListAttributes.TabIndex = 15;
-            this.ChkListAttributes.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.ChkList_ItemCheck);
-            this.ChkListAttributes.SelectedIndexChanged += new System.EventHandler(this.ChkListAttributes_SelectedIndexChanged);
-            // 
-            // propGridAtribute
-            // 
-            this.propGridAtribute.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.propGridAtribute.Location = new System.Drawing.Point(0, 66);
-            this.propGridAtribute.Margin = new System.Windows.Forms.Padding(4);
-            this.propGridAtribute.Name = "propGridAtribute";
-            this.propGridAtribute.Size = new System.Drawing.Size(521, 690);
-            this.propGridAtribute.TabIndex = 14;
-            this.propGridAtribute.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.propGridAtribute_PropertyValueChanged);
+            this.checkedListTables.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.checkedListTables.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkedListTables.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkedListTables.FormattingEnabled = true;
+            this.checkedListTables.Location = new System.Drawing.Point(10, 76);
+            this.checkedListTables.Name = "checkedListTables";
+            this.checkedListTables.Size = new System.Drawing.Size(401, 545);
+            this.checkedListTables.TabIndex = 10;
+            this.checkedListTables.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.CheckedList_ItemCheck);
+            this.checkedListTables.SelectedIndexChanged += new System.EventHandler(this.CheckedListTables_SelectedIndexChanged);
             // 
             // panelOptions
             // 
+            this.panelOptions.Controls.Add(this.labelCDSConnection);
+            this.panelOptions.Controls.Add(this.labelConnect);
+            this.panelOptions.Controls.Add(this.buttonConnect);
+            this.panelOptions.Controls.Add(this.buttonReload);
             this.panelOptions.Controls.Add(this.labelMainInstruct);
+            this.panelOptions.Controls.Add(this.textBoxDBConnection);
+            this.panelOptions.Controls.Add(this.labelPrefix);
+            this.panelOptions.Controls.Add(this.comboPrefix);
             this.panelOptions.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelOptions.Location = new System.Drawing.Point(0, 38);
+            this.panelOptions.Location = new System.Drawing.Point(0, 40);
             this.panelOptions.Margin = new System.Windows.Forms.Padding(4);
             this.panelOptions.Name = "panelOptions";
-            this.panelOptions.Size = new System.Drawing.Size(2059, 65);
+            this.panelOptions.Padding = new System.Windows.Forms.Padding(10);
+            this.panelOptions.Size = new System.Drawing.Size(2059, 184);
             this.panelOptions.TabIndex = 16;
+            // 
+            // labelCDSConnection
+            // 
+            this.labelCDSConnection.AutoSize = true;
+            this.labelCDSConnection.Location = new System.Drawing.Point(465, 79);
+            this.labelCDSConnection.Name = "labelCDSConnection";
+            this.labelCDSConnection.Size = new System.Drawing.Size(149, 25);
+            this.labelCDSConnection.TabIndex = 23;
+            this.labelCDSConnection.Text = "(not connected)";
+            // 
+            // labelConnect
+            // 
+            this.labelConnect.AutoSize = true;
+            this.labelConnect.Location = new System.Drawing.Point(21, 131);
+            this.labelConnect.Name = "labelConnect";
+            this.labelConnect.Size = new System.Drawing.Size(227, 25);
+            this.labelConnect.TabIndex = 18;
+            this.labelConnect.Text = "Connect to Data Source:";
+            // 
+            // buttonConnect
+            // 
+            this.buttonConnect.Location = new System.Drawing.Point(885, 122);
+            this.buttonConnect.Name = "buttonConnect";
+            this.buttonConnect.Size = new System.Drawing.Size(105, 42);
+            this.buttonConnect.TabIndex = 17;
+            this.buttonConnect.Text = "Connect";
+            this.buttonConnect.UseVisualStyleBackColor = true;
+            this.buttonConnect.Click += new System.EventHandler(this.ButtonConnect_Click);
+            // 
+            // buttonReload
+            // 
+            this.buttonReload.Location = new System.Drawing.Point(1001, 122);
+            this.buttonReload.Name = "buttonReload";
+            this.buttonReload.Size = new System.Drawing.Size(105, 42);
+            this.buttonReload.TabIndex = 19;
+            this.buttonReload.Text = "Reload";
+            this.buttonReload.UseVisualStyleBackColor = true;
+            this.buttonReload.Click += new System.EventHandler(this.ButtonReload_Click);
             // 
             // labelMainInstruct
             // 
             this.labelMainInstruct.BackColor = System.Drawing.SystemColors.Info;
             this.labelMainInstruct.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelMainInstruct.Location = new System.Drawing.Point(0, 0);
+            this.labelMainInstruct.Location = new System.Drawing.Point(10, 10);
             this.labelMainInstruct.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelMainInstruct.Name = "labelMainInstruct";
             this.labelMainInstruct.Padding = new System.Windows.Forms.Padding(2);
-            this.labelMainInstruct.Size = new System.Drawing.Size(2059, 66);
+            this.labelMainInstruct.Size = new System.Drawing.Size(2039, 47);
             this.labelMainInstruct.TabIndex = 16;
-            this.labelMainInstruct.Text = "Once connected to CRM, you can choose a prefix from the publishers on the system " +
-    "or enter your own.  Choose Connect to open Database and read the schema: Tables," +
-    " Fields, and Relationships.";
+            this.labelMainInstruct.Text = resources.GetString("labelMainInstruct.Text");
             // 
-            // chkAddNewFields
+            // textBoxDBConnection
             // 
-            this.chkAddNewFields.AutoSize = true;
-            this.chkAddNewFields.Enabled = false;
-            this.chkAddNewFields.Location = new System.Drawing.Point(1415, 47);
-            this.chkAddNewFields.Margin = new System.Windows.Forms.Padding(6);
-            this.chkAddNewFields.Name = "chkAddNewFields";
-            this.chkAddNewFields.Size = new System.Drawing.Size(221, 29);
-            this.chkAddNewFields.TabIndex = 35;
-            this.chkAddNewFields.Text = "Add Fields To Form?";
-            this.chkAddNewFields.UseVisualStyleBackColor = true;
+            this.textBoxDBConnection.HideSelection = false;
+            this.textBoxDBConnection.Location = new System.Drawing.Point(254, 129);
+            this.textBoxDBConnection.Name = "textBoxDBConnection";
+            this.textBoxDBConnection.ReadOnly = true;
+            this.textBoxDBConnection.Size = new System.Drawing.Size(607, 29);
+            this.textBoxDBConnection.TabIndex = 22;
+            // 
+            // labelPrefix
+            // 
+            this.labelPrefix.AutoSize = true;
+            this.labelPrefix.Location = new System.Drawing.Point(21, 79);
+            this.labelPrefix.Name = "labelPrefix";
+            this.labelPrefix.Size = new System.Drawing.Size(227, 25);
+            this.labelPrefix.TabIndex = 21;
+            this.labelPrefix.Text = "Choose Publisher Prefix:";
+            // 
+            // comboPrefix
+            // 
+            this.comboPrefix.FormattingEnabled = true;
+            this.comboPrefix.Location = new System.Drawing.Point(254, 76);
+            this.comboPrefix.Name = "comboPrefix";
+            this.comboPrefix.Size = new System.Drawing.Size(182, 32);
+            this.comboPrefix.TabIndex = 20;
+            // 
+            // checkAddNewFields
+            // 
+            this.checkAddNewFields.AutoSize = true;
+            this.checkAddNewFields.Location = new System.Drawing.Point(1415, 47);
+            this.checkAddNewFields.Margin = new System.Windows.Forms.Padding(6);
+            this.checkAddNewFields.Name = "checkAddNewFields";
+            this.checkAddNewFields.Size = new System.Drawing.Size(221, 29);
+            this.checkAddNewFields.TabIndex = 35;
+            this.checkAddNewFields.Text = "Add Fields To Form?";
+            this.checkAddNewFields.UseVisualStyleBackColor = true;
             // 
             // labelTableProps
             // 
@@ -259,39 +251,6 @@
             this.labelTableProps.TabIndex = 15;
             this.labelTableProps.Text = "Table Details";
             // 
-            // labelTableAttributes
-            // 
-            this.labelTableAttributes.BackColor = System.Drawing.SystemColors.Info;
-            this.labelTableAttributes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelTableAttributes.Location = new System.Drawing.Point(0, 0);
-            this.labelTableAttributes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelTableAttributes.Name = "labelTableAttributes";
-            this.labelTableAttributes.Padding = new System.Windows.Forms.Padding(2);
-            this.labelTableAttributes.Size = new System.Drawing.Size(513, 66);
-            this.labelTableAttributes.TabIndex = 16;
-            this.labelTableAttributes.Text = "Review and update the fileds related to the Table/Entity";
-            // 
-            // propGridTable
-            // 
-            this.propGridTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.propGridTable.Location = new System.Drawing.Point(0, 66);
-            this.propGridTable.Margin = new System.Windows.Forms.Padding(4);
-            this.propGridTable.Name = "propGridTable";
-            this.propGridTable.Size = new System.Drawing.Size(526, 690);
-            this.propGridTable.TabIndex = 18;
-            // 
-            // labelAttribProps
-            // 
-            this.labelAttribProps.BackColor = System.Drawing.SystemColors.Info;
-            this.labelAttribProps.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelAttribProps.Location = new System.Drawing.Point(0, 0);
-            this.labelAttribProps.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelAttribProps.Name = "labelAttribProps";
-            this.labelAttribProps.Padding = new System.Windows.Forms.Padding(2);
-            this.labelAttribProps.Size = new System.Drawing.Size(521, 66);
-            this.labelAttribProps.TabIndex = 17;
-            this.labelAttribProps.Text = "Review and update the details for the selected Field/Attribute";
-            // 
             // tabControlMain
             // 
             this.tabControlMain.Controls.Add(this.tabPageTableSelections);
@@ -300,188 +259,302 @@
             this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlMain.Enabled = false;
             this.tabControlMain.ItemSize = new System.Drawing.Size(200, 30);
-            this.tabControlMain.Location = new System.Drawing.Point(0, 103);
+            this.tabControlMain.Location = new System.Drawing.Point(0, 224);
             this.tabControlMain.Margin = new System.Windows.Forms.Padding(4);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
-            this.tabControlMain.Size = new System.Drawing.Size(2059, 838);
+            this.tabControlMain.Size = new System.Drawing.Size(2059, 715);
             this.tabControlMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControlMain.TabIndex = 35;
             this.tabControlMain.SelectedIndexChanged += new System.EventHandler(this.tabControlMain_SelectedIndexChanged);
             // 
             // tabPageTableSelections
             // 
-            this.tabPageTableSelections.Controls.Add(this.splitContainerTablesMain);
+            this.tabPageTableSelections.Controls.Add(this.panelAttribProps);
+            this.tabPageTableSelections.Controls.Add(this.splitterAttribList);
+            this.tabPageTableSelections.Controls.Add(this.panelAttribList);
+            this.tabPageTableSelections.Controls.Add(this.splitterTableProps);
+            this.tabPageTableSelections.Controls.Add(this.panelTableProps);
+            this.tabPageTableSelections.Controls.Add(this.splitterTableList);
+            this.tabPageTableSelections.Controls.Add(this.panelTableList);
             this.tabPageTableSelections.Location = new System.Drawing.Point(4, 34);
             this.tabPageTableSelections.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageTableSelections.Name = "tabPageTableSelections";
             this.tabPageTableSelections.Padding = new System.Windows.Forms.Padding(22);
-            this.tabPageTableSelections.Size = new System.Drawing.Size(2051, 800);
+            this.tabPageTableSelections.Size = new System.Drawing.Size(2051, 677);
             this.tabPageTableSelections.TabIndex = 0;
             this.tabPageTableSelections.Text = "Table and Entity Details";
             // 
-            // splitContainerTablesMain
+            // panelAttribProps
             // 
-            this.splitContainerTablesMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerTablesMain.Location = new System.Drawing.Point(22, 22);
-            this.splitContainerTablesMain.Margin = new System.Windows.Forms.Padding(4);
-            this.splitContainerTablesMain.Name = "splitContainerTablesMain";
+            this.panelAttribProps.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelAttribProps.Controls.Add(this.propGridAtribute);
+            this.panelAttribProps.Controls.Add(this.labelAttribProps);
+            this.panelAttribProps.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelAttribProps.Location = new System.Drawing.Point(1529, 22);
+            this.panelAttribProps.Margin = new System.Windows.Forms.Padding(4);
+            this.panelAttribProps.Name = "panelAttribProps";
+            this.panelAttribProps.Padding = new System.Windows.Forms.Padding(5);
+            this.panelAttribProps.Size = new System.Drawing.Size(500, 633);
+            this.panelAttribProps.TabIndex = 26;
             // 
-            // splitContainerTablesMain.Panel1
+            // propGridAtribute
             // 
-            this.splitContainerTablesMain.Panel1.Controls.Add(this.ChkListTables);
-            this.splitContainerTablesMain.Panel1.Controls.Add(this.labelTablesFound);
+            this.propGridAtribute.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.propGridAtribute.Location = new System.Drawing.Point(5, 71);
+            this.propGridAtribute.Margin = new System.Windows.Forms.Padding(4);
+            this.propGridAtribute.Name = "propGridAtribute";
+            this.propGridAtribute.Size = new System.Drawing.Size(488, 555);
+            this.propGridAtribute.TabIndex = 14;
             // 
-            // splitContainerTablesMain.Panel2
+            // labelAttribProps
             // 
-            this.splitContainerTablesMain.Panel2.Controls.Add(this.panel3);
-            this.splitContainerTablesMain.Panel2.Controls.Add(this.splitterAttribs);
-            this.splitContainerTablesMain.Panel2.Controls.Add(this.panel2);
-            this.splitContainerTablesMain.Panel2.Controls.Add(this.splitterTableProps);
-            this.splitContainerTablesMain.Panel2.Controls.Add(this.panelTableProps);
-            this.splitContainerTablesMain.Size = new System.Drawing.Size(2007, 756);
-            this.splitContainerTablesMain.SplitterDistance = 399;
-            this.splitContainerTablesMain.SplitterWidth = 18;
-            this.splitContainerTablesMain.TabIndex = 0;
+            this.labelAttribProps.BackColor = System.Drawing.SystemColors.Info;
+            this.labelAttribProps.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelAttribProps.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelAttribProps.Location = new System.Drawing.Point(5, 5);
+            this.labelAttribProps.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelAttribProps.Name = "labelAttribProps";
+            this.labelAttribProps.Padding = new System.Windows.Forms.Padding(2);
+            this.labelAttribProps.Size = new System.Drawing.Size(488, 66);
+            this.labelAttribProps.TabIndex = 17;
+            this.labelAttribProps.Text = "Review and update the details for the selected Field/Attribute";
             // 
-            // panel3
+            // splitterAttribList
             // 
-            this.panel3.Controls.Add(this.propGridAtribute);
-            this.panel3.Controls.Add(this.labelAttribProps);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(1069, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(521, 756);
-            this.panel3.TabIndex = 22;
+            this.splitterAttribList.Location = new System.Drawing.Point(1514, 22);
+            this.splitterAttribList.Margin = new System.Windows.Forms.Padding(4);
+            this.splitterAttribList.Name = "splitterAttribList";
+            this.splitterAttribList.Size = new System.Drawing.Size(15, 633);
+            this.splitterAttribList.TabIndex = 25;
+            this.splitterAttribList.TabStop = false;
             // 
-            // splitterAttribs
+            // panelAttribList
             // 
-            this.splitterAttribs.Location = new System.Drawing.Point(1054, 0);
-            this.splitterAttribs.Margin = new System.Windows.Forms.Padding(4);
-            this.splitterAttribs.Name = "splitterAttribs";
-            this.splitterAttribs.Size = new System.Drawing.Size(15, 756);
-            this.splitterAttribs.TabIndex = 23;
-            this.splitterAttribs.TabStop = false;
+            this.panelAttribList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelAttribList.Controls.Add(this.checkedListAttributes);
+            this.panelAttribList.Controls.Add(this.labelTableAttributes);
+            this.panelAttribList.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelAttribList.Location = new System.Drawing.Point(1001, 22);
+            this.panelAttribList.Margin = new System.Windows.Forms.Padding(4);
+            this.panelAttribList.Name = "panelAttribList";
+            this.panelAttribList.Padding = new System.Windows.Forms.Padding(5);
+            this.panelAttribList.Size = new System.Drawing.Size(513, 633);
+            this.panelAttribList.TabIndex = 24;
             // 
-            // panel2
+            // checkedListAttributes
             // 
-            this.panel2.Controls.Add(this.ChkListAttributes);
-            this.panel2.Controls.Add(this.labelTableAttributes);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(541, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(513, 756);
-            this.panel2.TabIndex = 21;
+            this.checkedListAttributes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.checkedListAttributes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkedListAttributes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkedListAttributes.FormattingEnabled = true;
+            this.checkedListAttributes.Location = new System.Drawing.Point(5, 71);
+            this.checkedListAttributes.Margin = new System.Windows.Forms.Padding(11);
+            this.checkedListAttributes.Name = "checkedListAttributes";
+            this.checkedListAttributes.Size = new System.Drawing.Size(501, 555);
+            this.checkedListAttributes.TabIndex = 15;
+            this.checkedListAttributes.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.CheckedList_ItemCheck);
+            this.checkedListAttributes.SelectedIndexChanged += new System.EventHandler(this.CheckedListAttributes_SelectedIndexChanged);
+            // 
+            // labelTableAttributes
+            // 
+            this.labelTableAttributes.BackColor = System.Drawing.SystemColors.Info;
+            this.labelTableAttributes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelTableAttributes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelTableAttributes.Location = new System.Drawing.Point(5, 5);
+            this.labelTableAttributes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTableAttributes.Name = "labelTableAttributes";
+            this.labelTableAttributes.Padding = new System.Windows.Forms.Padding(2);
+            this.labelTableAttributes.Size = new System.Drawing.Size(501, 66);
+            this.labelTableAttributes.TabIndex = 16;
+            this.labelTableAttributes.Text = "Review and update the fileds related to the Table/Entity";
             // 
             // splitterTableProps
             // 
-            this.splitterTableProps.Location = new System.Drawing.Point(526, 0);
+            this.splitterTableProps.Location = new System.Drawing.Point(986, 22);
             this.splitterTableProps.Margin = new System.Windows.Forms.Padding(4);
             this.splitterTableProps.Name = "splitterTableProps";
-            this.splitterTableProps.Size = new System.Drawing.Size(15, 756);
-            this.splitterTableProps.TabIndex = 19;
+            this.splitterTableProps.Size = new System.Drawing.Size(15, 633);
+            this.splitterTableProps.TabIndex = 21;
             this.splitterTableProps.TabStop = false;
             // 
             // panelTableProps
             // 
+            this.panelTableProps.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelTableProps.Controls.Add(this.propGridTable);
             this.panelTableProps.Controls.Add(this.labelTableDetails);
             this.panelTableProps.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelTableProps.Location = new System.Drawing.Point(0, 0);
+            this.panelTableProps.Location = new System.Drawing.Point(460, 22);
             this.panelTableProps.Margin = new System.Windows.Forms.Padding(4);
             this.panelTableProps.Name = "panelTableProps";
-            this.panelTableProps.Size = new System.Drawing.Size(526, 756);
-            this.panelTableProps.TabIndex = 20;
+            this.panelTableProps.Padding = new System.Windows.Forms.Padding(5);
+            this.panelTableProps.Size = new System.Drawing.Size(526, 633);
+            this.panelTableProps.TabIndex = 22;
+            // 
+            // propGridTable
+            // 
+            this.propGridTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.propGridTable.Location = new System.Drawing.Point(5, 71);
+            this.propGridTable.Margin = new System.Windows.Forms.Padding(4);
+            this.propGridTable.Name = "propGridTable";
+            this.propGridTable.Size = new System.Drawing.Size(514, 555);
+            this.propGridTable.TabIndex = 18;
+            this.propGridTable.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.propGridAtribute_PropertyValueChanged);
             // 
             // labelTableDetails
             // 
             this.labelTableDetails.BackColor = System.Drawing.SystemColors.Info;
+            this.labelTableDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelTableDetails.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelTableDetails.Location = new System.Drawing.Point(0, 0);
+            this.labelTableDetails.Location = new System.Drawing.Point(5, 5);
             this.labelTableDetails.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTableDetails.Name = "labelTableDetails";
             this.labelTableDetails.Padding = new System.Windows.Forms.Padding(2);
-            this.labelTableDetails.Size = new System.Drawing.Size(526, 66);
+            this.labelTableDetails.Size = new System.Drawing.Size(514, 66);
             this.labelTableDetails.TabIndex = 19;
             this.labelTableDetails.Text = "Review and update selected Table/Entity Details";
+            // 
+            // splitterTableList
+            // 
+            this.splitterTableList.Location = new System.Drawing.Point(445, 22);
+            this.splitterTableList.Margin = new System.Windows.Forms.Padding(4);
+            this.splitterTableList.Name = "splitterTableList";
+            this.splitterTableList.Size = new System.Drawing.Size(15, 633);
+            this.splitterTableList.TabIndex = 20;
+            this.splitterTableList.TabStop = false;
+            // 
+            // panelTableList
+            // 
+            this.panelTableList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelTableList.Controls.Add(this.checkedListTables);
+            this.panelTableList.Controls.Add(this.labelTablesFound);
+            this.panelTableList.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelTableList.Location = new System.Drawing.Point(22, 22);
+            this.panelTableList.Name = "panelTableList";
+            this.panelTableList.Padding = new System.Windows.Forms.Padding(10);
+            this.panelTableList.Size = new System.Drawing.Size(423, 633);
+            this.panelTableList.TabIndex = 1;
+            // 
+            // labelTablesFound
+            // 
+            this.labelTablesFound.BackColor = System.Drawing.SystemColors.Info;
+            this.labelTablesFound.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelTablesFound.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelTablesFound.Location = new System.Drawing.Point(10, 10);
+            this.labelTablesFound.Margin = new System.Windows.Forms.Padding(4, 0, 4, 10);
+            this.labelTablesFound.Name = "labelTablesFound";
+            this.labelTablesFound.Padding = new System.Windows.Forms.Padding(2);
+            this.labelTablesFound.Size = new System.Drawing.Size(401, 66);
+            this.labelTablesFound.TabIndex = 16;
+            this.labelTablesFound.Text = "Check the Tables that you would like to import as CDS Entities.";
             // 
             // tabPageRelationships
             // 
             this.tabPageRelationships.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPageRelationships.Controls.Add(this.lstRelationships);
-            this.tabPageRelationships.Controls.Add(this.panel4);
-            this.tabPageRelationships.Controls.Add(this.panel1);
+            this.tabPageRelationships.Controls.Add(this.panelRelationProps);
+            this.tabPageRelationships.Controls.Add(this.splitterRelationList);
+            this.tabPageRelationships.Controls.Add(this.listRelationships);
+            this.tabPageRelationships.Controls.Add(this.panelAddRelation);
             this.tabPageRelationships.Controls.Add(this.labelRelationInstructions);
             this.tabPageRelationships.Location = new System.Drawing.Point(4, 34);
             this.tabPageRelationships.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageRelationships.Name = "tabPageRelationships";
             this.tabPageRelationships.Padding = new System.Windows.Forms.Padding(22);
-            this.tabPageRelationships.Size = new System.Drawing.Size(2051, 800);
+            this.tabPageRelationships.Size = new System.Drawing.Size(2051, 677);
             this.tabPageRelationships.TabIndex = 1;
             this.tabPageRelationships.Text = "Entity Relationships";
             // 
-            // lstRelationships
+            // panelRelationProps
             // 
-            this.lstRelationships.DisplayMember = "SummaryName";
-            this.lstRelationships.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstRelationships.FormattingEnabled = true;
-            this.lstRelationships.ItemHeight = 24;
-            this.lstRelationships.Location = new System.Drawing.Point(623, 101);
-            this.lstRelationships.Margin = new System.Windows.Forms.Padding(11);
-            this.lstRelationships.Name = "lstRelationships";
-            this.lstRelationships.Size = new System.Drawing.Size(1157, 677);
-            this.lstRelationships.TabIndex = 4;
-            this.lstRelationships.ValueMember = "Name";
+            this.panelRelationProps.Controls.Add(this.propGridRelation);
+            this.panelRelationProps.Controls.Add(this.flowPanelRemoveRelation);
+            this.panelRelationProps.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelRelationProps.Location = new System.Drawing.Point(1473, 101);
+            this.panelRelationProps.Margin = new System.Windows.Forms.Padding(6);
+            this.panelRelationProps.Name = "panelRelationProps";
+            this.panelRelationProps.Size = new System.Drawing.Size(556, 554);
+            this.panelRelationProps.TabIndex = 6;
             // 
-            // panel4
+            // propGridRelation
             // 
-            this.panel4.Controls.Add(this.btnRelationshipRemove);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(1780, 101);
-            this.panel4.Margin = new System.Windows.Forms.Padding(6);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(249, 677);
-            this.panel4.TabIndex = 6;
+            this.propGridRelation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.propGridRelation.Location = new System.Drawing.Point(0, 0);
+            this.propGridRelation.Name = "propGridRelation";
+            this.propGridRelation.Size = new System.Drawing.Size(556, 476);
+            this.propGridRelation.TabIndex = 22;
             // 
-            // btnRelationshipRemove
+            // flowPanelRemoveRelation
             // 
-            this.btnRelationshipRemove.Enabled = false;
-            this.btnRelationshipRemove.Location = new System.Drawing.Point(17, 11);
-            this.btnRelationshipRemove.Margin = new System.Windows.Forms.Padding(11);
-            this.btnRelationshipRemove.Name = "btnRelationshipRemove";
-            this.btnRelationshipRemove.Size = new System.Drawing.Size(218, 50);
-            this.btnRelationshipRemove.TabIndex = 16;
-            this.btnRelationshipRemove.Text = "Remove Relationship";
-            this.btnRelationshipRemove.UseVisualStyleBackColor = true;
+            this.flowPanelRemoveRelation.Controls.Add(this.buttonRemoveRelationship);
+            this.flowPanelRemoveRelation.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowPanelRemoveRelation.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowPanelRemoveRelation.Location = new System.Drawing.Point(0, 476);
+            this.flowPanelRemoveRelation.Name = "flowPanelRemoveRelation";
+            this.flowPanelRemoveRelation.Size = new System.Drawing.Size(556, 78);
+            this.flowPanelRemoveRelation.TabIndex = 17;
             // 
-            // panel1
+            // buttonRemoveRelationship
             // 
-            this.panel1.Controls.Add(this.btnRelationshipAdd);
-            this.panel1.Controls.Add(this.label32);
-            this.panel1.Controls.Add(this.label31);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.comboRelationshipType);
-            this.panel1.Controls.Add(this.comboRelationshipSecondary);
-            this.panel1.Controls.Add(this.comboRelationshipPrimary);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(22, 101);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(601, 677);
-            this.panel1.TabIndex = 5;
+            this.buttonRemoveRelationship.Enabled = false;
+            this.buttonRemoveRelationship.Location = new System.Drawing.Point(11, 11);
+            this.buttonRemoveRelationship.Margin = new System.Windows.Forms.Padding(11);
+            this.buttonRemoveRelationship.Name = "buttonRemoveRelationship";
+            this.buttonRemoveRelationship.Size = new System.Drawing.Size(218, 50);
+            this.buttonRemoveRelationship.TabIndex = 16;
+            this.buttonRemoveRelationship.Text = "Remove Relationship";
+            this.buttonRemoveRelationship.UseVisualStyleBackColor = true;
+            this.buttonRemoveRelationship.Click += new System.EventHandler(this.ButtonRemoveRelationship_Click);
             // 
-            // btnRelationshipAdd
+            // splitterRelationList
             // 
-            this.btnRelationshipAdd.Enabled = false;
-            this.btnRelationshipAdd.Location = new System.Drawing.Point(207, 205);
-            this.btnRelationshipAdd.Margin = new System.Windows.Forms.Padding(11);
-            this.btnRelationshipAdd.Name = "btnRelationshipAdd";
-            this.btnRelationshipAdd.Size = new System.Drawing.Size(218, 50);
-            this.btnRelationshipAdd.TabIndex = 15;
-            this.btnRelationshipAdd.Text = "Add Relationship";
-            this.btnRelationshipAdd.UseVisualStyleBackColor = true;
+            this.splitterRelationList.Location = new System.Drawing.Point(1458, 101);
+            this.splitterRelationList.Margin = new System.Windows.Forms.Padding(4);
+            this.splitterRelationList.Name = "splitterRelationList";
+            this.splitterRelationList.Size = new System.Drawing.Size(15, 554);
+            this.splitterRelationList.TabIndex = 22;
+            this.splitterRelationList.TabStop = false;
+            // 
+            // listRelationships
+            // 
+            this.listRelationships.DisplayMember = "SummaryName";
+            this.listRelationships.Dock = System.Windows.Forms.DockStyle.Left;
+            this.listRelationships.FormattingEnabled = true;
+            this.listRelationships.ItemHeight = 24;
+            this.listRelationships.Location = new System.Drawing.Point(707, 101);
+            this.listRelationships.Margin = new System.Windows.Forms.Padding(11);
+            this.listRelationships.Name = "listRelationships";
+            this.listRelationships.Size = new System.Drawing.Size(751, 554);
+            this.listRelationships.TabIndex = 4;
+            this.listRelationships.ValueMember = "Name";
+            this.listRelationships.SelectedIndexChanged += new System.EventHandler(this.ListRelationships_SelectedIndexChanged);
+            // 
+            // panelAddRelation
+            // 
+            this.panelAddRelation.Controls.Add(this.buttonAddRelationship);
+            this.panelAddRelation.Controls.Add(this.label32);
+            this.panelAddRelation.Controls.Add(this.label31);
+            this.panelAddRelation.Controls.Add(this.label2);
+            this.panelAddRelation.Controls.Add(this.comboRelationshipType);
+            this.panelAddRelation.Controls.Add(this.comboRelationshipSecondary);
+            this.panelAddRelation.Controls.Add(this.comboRelationshipPrimary);
+            this.panelAddRelation.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelAddRelation.Location = new System.Drawing.Point(22, 101);
+            this.panelAddRelation.Margin = new System.Windows.Forms.Padding(6);
+            this.panelAddRelation.Name = "panelAddRelation";
+            this.panelAddRelation.Size = new System.Drawing.Size(685, 554);
+            this.panelAddRelation.TabIndex = 5;
+            // 
+            // buttonAddRelationship
+            // 
+            this.buttonAddRelationship.Enabled = false;
+            this.buttonAddRelationship.Location = new System.Drawing.Point(437, 207);
+            this.buttonAddRelationship.Margin = new System.Windows.Forms.Padding(11);
+            this.buttonAddRelationship.Name = "buttonAddRelationship";
+            this.buttonAddRelationship.Size = new System.Drawing.Size(218, 50);
+            this.buttonAddRelationship.TabIndex = 15;
+            this.buttonAddRelationship.Text = "Add Relationship";
+            this.buttonAddRelationship.UseVisualStyleBackColor = true;
+            this.buttonAddRelationship.Click += new System.EventHandler(this.ButtonAddRelationship_Click);
             // 
             // label32
             // 
@@ -525,7 +598,7 @@
             this.comboRelationshipType.Location = new System.Drawing.Point(196, 22);
             this.comboRelationshipType.Margin = new System.Windows.Forms.Padding(11);
             this.comboRelationshipType.Name = "comboRelationshipType";
-            this.comboRelationshipType.Size = new System.Drawing.Size(380, 32);
+            this.comboRelationshipType.Size = new System.Drawing.Size(459, 32);
             this.comboRelationshipType.TabIndex = 11;
             this.comboRelationshipType.SelectedIndexChanged += new System.EventHandler(this.comboRelationshipType_SelectedIndexChanged);
             // 
@@ -536,8 +609,9 @@
             this.comboRelationshipSecondary.Location = new System.Drawing.Point(196, 144);
             this.comboRelationshipSecondary.Margin = new System.Windows.Forms.Padding(11);
             this.comboRelationshipSecondary.Name = "comboRelationshipSecondary";
-            this.comboRelationshipSecondary.Size = new System.Drawing.Size(380, 32);
+            this.comboRelationshipSecondary.Size = new System.Drawing.Size(459, 32);
             this.comboRelationshipSecondary.TabIndex = 10;
+            this.comboRelationshipSecondary.SelectedIndexChanged += new System.EventHandler(this.ComboRelationEntity_SelectedIndexChanged);
             // 
             // comboRelationshipPrimary
             // 
@@ -546,8 +620,9 @@
             this.comboRelationshipPrimary.Location = new System.Drawing.Point(196, 83);
             this.comboRelationshipPrimary.Margin = new System.Windows.Forms.Padding(11);
             this.comboRelationshipPrimary.Name = "comboRelationshipPrimary";
-            this.comboRelationshipPrimary.Size = new System.Drawing.Size(380, 32);
+            this.comboRelationshipPrimary.Size = new System.Drawing.Size(459, 32);
             this.comboRelationshipPrimary.TabIndex = 9;
+            this.comboRelationshipPrimary.SelectedIndexChanged += new System.EventHandler(this.ComboRelationEntity_SelectedIndexChanged);
             // 
             // labelRelationInstructions
             // 
@@ -563,38 +638,49 @@
             // 
             // tabPageCommit
             // 
+            this.tabPageCommit.Controls.Add(this.buttonCreate);
             this.tabPageCommit.Controls.Add(this.RichTextSummary);
-            this.tabPageCommit.Controls.Add(this.chkPublish);
-            this.tabPageCommit.Controls.Add(this.chkAddNewFields);
+            this.tabPageCommit.Controls.Add(this.checkPublish);
+            this.tabPageCommit.Controls.Add(this.checkAddNewFields);
             this.tabPageCommit.Location = new System.Drawing.Point(4, 34);
             this.tabPageCommit.Margin = new System.Windows.Forms.Padding(6);
             this.tabPageCommit.Name = "tabPageCommit";
             this.tabPageCommit.Padding = new System.Windows.Forms.Padding(6);
-            this.tabPageCommit.Size = new System.Drawing.Size(2051, 800);
+            this.tabPageCommit.Size = new System.Drawing.Size(2051, 677);
             this.tabPageCommit.TabIndex = 2;
             this.tabPageCommit.Text = "Commit Changes";
+            // 
+            // buttonCreate
+            // 
+            this.buttonCreate.Location = new System.Drawing.Point(1415, 137);
+            this.buttonCreate.Name = "buttonCreate";
+            this.buttonCreate.Size = new System.Drawing.Size(164, 64);
+            this.buttonCreate.TabIndex = 38;
+            this.buttonCreate.Text = "Create";
+            this.buttonCreate.UseVisualStyleBackColor = true;
+            this.buttonCreate.Click += new System.EventHandler(this.ButtonCreate_Click);
             // 
             // RichTextSummary
             // 
             this.RichTextSummary.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.RichTextSummary.Location = new System.Drawing.Point(48, 48);
+            this.RichTextSummary.Dock = System.Windows.Forms.DockStyle.Left;
+            this.RichTextSummary.Location = new System.Drawing.Point(6, 6);
             this.RichTextSummary.Name = "RichTextSummary";
             this.RichTextSummary.ReadOnly = true;
-            this.RichTextSummary.Size = new System.Drawing.Size(1305, 723);
+            this.RichTextSummary.Size = new System.Drawing.Size(1305, 665);
             this.RichTextSummary.TabIndex = 37;
             this.RichTextSummary.Text = "";
             // 
-            // chkPublish
+            // checkPublish
             // 
-            this.chkPublish.AutoSize = true;
-            this.chkPublish.Enabled = false;
-            this.chkPublish.Location = new System.Drawing.Point(1415, 93);
-            this.chkPublish.Margin = new System.Windows.Forms.Padding(11);
-            this.chkPublish.Name = "chkPublish";
-            this.chkPublish.Size = new System.Drawing.Size(304, 29);
-            this.chkPublish.TabIndex = 36;
-            this.chkPublish.Text = "Publish ? (No Rollback Option)";
-            this.chkPublish.UseVisualStyleBackColor = true;
+            this.checkPublish.AutoSize = true;
+            this.checkPublish.Location = new System.Drawing.Point(1415, 93);
+            this.checkPublish.Margin = new System.Windows.Forms.Padding(11);
+            this.checkPublish.Name = "checkPublish";
+            this.checkPublish.Size = new System.Drawing.Size(304, 29);
+            this.checkPublish.TabIndex = 36;
+            this.checkPublish.Text = "Publish ? (No Rollback Option)";
+            this.checkPublish.UseVisualStyleBackColor = true;
             // 
             // statusStripMain
             // 
@@ -603,10 +689,10 @@
             this.tsLabelConnString,
             this.tstxtConnectionString});
             this.statusStripMain.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.statusStripMain.Location = new System.Drawing.Point(0, 941);
+            this.statusStripMain.Location = new System.Drawing.Point(0, 939);
             this.statusStripMain.Name = "statusStripMain";
             this.statusStripMain.Padding = new System.Windows.Forms.Padding(2, 0, 15, 0);
-            this.statusStripMain.Size = new System.Drawing.Size(2059, 32);
+            this.statusStripMain.Size = new System.Drawing.Size(2059, 34);
             this.statusStripMain.TabIndex = 36;
             this.statusStripMain.Text = "statusStrip";
             // 
@@ -640,19 +726,18 @@
             this.toolStripMenu.ResumeLayout(false);
             this.toolStripMenu.PerformLayout();
             this.panelOptions.ResumeLayout(false);
+            this.panelOptions.PerformLayout();
             this.tabControlMain.ResumeLayout(false);
             this.tabPageTableSelections.ResumeLayout(false);
-            this.splitContainerTablesMain.Panel1.ResumeLayout(false);
-            this.splitContainerTablesMain.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerTablesMain)).EndInit();
-            this.splitContainerTablesMain.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.panelAttribProps.ResumeLayout(false);
+            this.panelAttribList.ResumeLayout(false);
             this.panelTableProps.ResumeLayout(false);
+            this.panelTableList.ResumeLayout(false);
             this.tabPageRelationships.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelRelationProps.ResumeLayout(false);
+            this.flowPanelRemoveRelation.ResumeLayout(false);
+            this.panelAddRelation.ResumeLayout(false);
+            this.panelAddRelation.PerformLayout();
             this.tabPageCommit.ResumeLayout(false);
             this.tabPageCommit.PerformLayout();
             this.statusStripMain.ResumeLayout(false);
@@ -665,32 +750,15 @@
         #endregion
         private System.Windows.Forms.ToolStrip toolStripMenu;
         private System.Windows.Forms.ToolStripButton tsbClose;
-        private System.Windows.Forms.ToolStripButton tsButtonConnect;
-        private System.Windows.Forms.ToolStripSeparator tssSeparator1;
-        private System.Windows.Forms.CheckedListBox ChkListTables;
-        private System.Windows.Forms.PropertyGrid propGridAtribute;
+        private System.Windows.Forms.CheckedListBox checkedListTables;
         private System.Windows.Forms.Label labelTableProps;
-        private System.Windows.Forms.CheckedListBox ChkListAttributes;
-        private System.Windows.Forms.Label labelTableAttributes;
-        private System.Windows.Forms.Label labelTablesFound;
         private System.Windows.Forms.Panel panelOptions;
-        private System.Windows.Forms.PropertyGrid propGridTable;
-        private System.Windows.Forms.Label labelAttribProps;
         private System.Windows.Forms.TabControl tabControlMain;
         private System.Windows.Forms.TabPage tabPageTableSelections;
         private System.Windows.Forms.TabPage tabPageRelationships;
-        private System.Windows.Forms.SplitContainer splitContainerTablesMain;
-        private System.Windows.Forms.Splitter splitterTableProps;
-        private System.Windows.Forms.Splitter splitterAttribs;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panelTableProps;
-        private System.Windows.Forms.Label labelTableDetails;
-        private System.Windows.Forms.CheckBox chkAddNewFields;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button btnRelationshipRemove;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnRelationshipAdd;
+        private System.Windows.Forms.CheckBox checkAddNewFields;
+        private System.Windows.Forms.Panel panelAddRelation;
+        private System.Windows.Forms.Button buttonAddRelationship;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label2;
@@ -702,13 +770,37 @@
         private System.Windows.Forms.ToolStripLabel tsLabelConnString;
         private System.Windows.Forms.ToolStripTextBox tstxtConnectionString;
         private System.Windows.Forms.TabPage tabPageCommit;
-        private System.Windows.Forms.CheckBox chkPublish;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripComboBox tsComboPrefix;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripButton tsButtonReload;
+        private System.Windows.Forms.CheckBox checkPublish;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
         private System.Windows.Forms.Label labelMainInstruct;
-        private System.Windows.Forms.ListBox lstRelationships;
+        private System.Windows.Forms.ListBox listRelationships;
         private System.Windows.Forms.RichTextBox RichTextSummary;
+        private System.Windows.Forms.Button buttonCreate;
+        private System.Windows.Forms.Button buttonConnect;
+        private System.Windows.Forms.Button buttonReload;
+        private System.Windows.Forms.Label labelConnect;
+        private System.Windows.Forms.TextBox textBoxDBConnection;
+        private System.Windows.Forms.Label labelPrefix;
+        private System.Windows.Forms.ComboBox comboPrefix;
+        private System.Windows.Forms.Panel panelAttribProps;
+        private System.Windows.Forms.PropertyGrid propGridAtribute;
+        private System.Windows.Forms.Label labelAttribProps;
+        private System.Windows.Forms.Splitter splitterAttribList;
+        private System.Windows.Forms.Panel panelAttribList;
+        private System.Windows.Forms.CheckedListBox checkedListAttributes;
+        private System.Windows.Forms.Label labelTableAttributes;
+        private System.Windows.Forms.Splitter splitterTableProps;
+        private System.Windows.Forms.Panel panelTableProps;
+        private System.Windows.Forms.PropertyGrid propGridTable;
+        private System.Windows.Forms.Label labelTableDetails;
+        private System.Windows.Forms.Splitter splitterTableList;
+        private System.Windows.Forms.Panel panelTableList;
+        private System.Windows.Forms.Label labelTablesFound;
+        private System.Windows.Forms.Label labelCDSConnection;
+        private System.Windows.Forms.Panel panelRelationProps;
+        private System.Windows.Forms.PropertyGrid propGridRelation;
+        private System.Windows.Forms.FlowLayoutPanel flowPanelRemoveRelation;
+        private System.Windows.Forms.Button buttonRemoveRelationship;
+        private System.Windows.Forms.Splitter splitterRelationList;
     }
 }

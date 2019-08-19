@@ -45,35 +45,39 @@
             // txtConnectionPassword
             // 
             this.txtConnectionPassword.Enabled = false;
-            this.txtConnectionPassword.Location = new System.Drawing.Point(116, 105);
+            this.txtConnectionPassword.Location = new System.Drawing.Point(222, 194);
+            this.txtConnectionPassword.Margin = new System.Windows.Forms.Padding(6);
             this.txtConnectionPassword.MaxLength = 100;
             this.txtConnectionPassword.Name = "txtConnectionPassword";
             this.txtConnectionPassword.PasswordChar = '*';
-            this.txtConnectionPassword.Size = new System.Drawing.Size(265, 20);
+            this.txtConnectionPassword.Size = new System.Drawing.Size(479, 29);
             this.txtConnectionPassword.TabIndex = 32;
             // 
             // label33
             // 
-            this.label33.Location = new System.Drawing.Point(7, 108);
+            this.label33.Location = new System.Drawing.Point(13, 199);
+            this.label33.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(85, 19);
+            this.label33.Size = new System.Drawing.Size(156, 35);
             this.label33.TabIndex = 31;
             this.label33.Text = "Password";
             // 
             // txtConnectionUsername
             // 
             this.txtConnectionUsername.Enabled = false;
-            this.txtConnectionUsername.Location = new System.Drawing.Point(116, 81);
+            this.txtConnectionUsername.Location = new System.Drawing.Point(222, 150);
+            this.txtConnectionUsername.Margin = new System.Windows.Forms.Padding(6);
             this.txtConnectionUsername.MaxLength = 100;
             this.txtConnectionUsername.Name = "txtConnectionUsername";
-            this.txtConnectionUsername.Size = new System.Drawing.Size(265, 20);
+            this.txtConnectionUsername.Size = new System.Drawing.Size(479, 29);
             this.txtConnectionUsername.TabIndex = 30;
             // 
             // label32
             // 
-            this.label32.Location = new System.Drawing.Point(7, 84);
+            this.label32.Location = new System.Drawing.Point(13, 155);
+            this.label32.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(85, 19);
+            this.label32.Size = new System.Drawing.Size(156, 35);
             this.label32.TabIndex = 29;
             this.label32.Text = "Username";
             // 
@@ -82,9 +86,10 @@
             this.chkConnectionIntegrated.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkConnectionIntegrated.Checked = true;
             this.chkConnectionIntegrated.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkConnectionIntegrated.Location = new System.Drawing.Point(7, 58);
+            this.chkConnectionIntegrated.Location = new System.Drawing.Point(13, 107);
+            this.chkConnectionIntegrated.Margin = new System.Windows.Forms.Padding(6);
             this.chkConnectionIntegrated.Name = "chkConnectionIntegrated";
-            this.chkConnectionIntegrated.Size = new System.Drawing.Size(123, 19);
+            this.chkConnectionIntegrated.Size = new System.Drawing.Size(231, 35);
             this.chkConnectionIntegrated.TabIndex = 28;
             this.chkConnectionIntegrated.Text = "Integrated Security";
             this.chkConnectionIntegrated.UseVisualStyleBackColor = true;
@@ -93,36 +98,40 @@
             // txtConnectionDatabase
             // 
             this.txtConnectionDatabase.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConnectionDatabase.Location = new System.Drawing.Point(116, 34);
+            this.txtConnectionDatabase.Location = new System.Drawing.Point(222, 63);
+            this.txtConnectionDatabase.Margin = new System.Windows.Forms.Padding(6);
             this.txtConnectionDatabase.MaxLength = 100;
             this.txtConnectionDatabase.Name = "txtConnectionDatabase";
-            this.txtConnectionDatabase.Size = new System.Drawing.Size(265, 20);
+            this.txtConnectionDatabase.Size = new System.Drawing.Size(479, 29);
             this.txtConnectionDatabase.TabIndex = 27;
             // 
             // label31
             // 
-            this.label31.Location = new System.Drawing.Point(7, 37);
+            this.label31.Location = new System.Drawing.Point(13, 68);
+            this.label31.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(85, 19);
+            this.label31.Size = new System.Drawing.Size(156, 35);
             this.label31.TabIndex = 26;
             this.label31.Text = "Database";
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(7, 11);
+            this.label2.Location = new System.Drawing.Point(13, 20);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 19);
+            this.label2.Size = new System.Drawing.Size(156, 35);
             this.label2.TabIndex = 25;
             this.label2.Text = "Server";
             // 
             // txtConnectionServer
             // 
             this.txtConnectionServer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConnectionServer.Location = new System.Drawing.Point(116, 8);
+            this.txtConnectionServer.Location = new System.Drawing.Point(222, 15);
+            this.txtConnectionServer.Margin = new System.Windows.Forms.Padding(6);
             this.txtConnectionServer.MaxLength = 100;
             this.txtConnectionServer.Name = "txtConnectionServer";
-            this.txtConnectionServer.Size = new System.Drawing.Size(265, 20);
+            this.txtConnectionServer.Size = new System.Drawing.Size(479, 29);
             this.txtConnectionServer.TabIndex = 24;
             // 
             // errorMgr
@@ -131,8 +140,8 @@
             // 
             // SQLServerConnection
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(168F, 168F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.chkConnectionIntegrated);
             this.Controls.Add(this.txtConnectionPassword);
             this.Controls.Add(this.txtConnectionServer);
@@ -142,8 +151,9 @@
             this.Controls.Add(this.txtConnectionUsername);
             this.Controls.Add(this.label31);
             this.Controls.Add(this.label32);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "SQLServerConnection";
-            this.Size = new System.Drawing.Size(399, 143);
+            this.Size = new System.Drawing.Size(735, 264);
             this.EnabledChanged += new System.EventHandler(this.SQLServerConnect_EnabledChanged);
             ((System.ComponentModel.ISupportInitialize)(this.errorMgr)).EndInit();
             this.ResumeLayout(false);

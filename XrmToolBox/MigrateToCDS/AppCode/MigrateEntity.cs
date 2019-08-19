@@ -40,13 +40,17 @@ namespace CDSTools
             OriginalTable = originalTable;
             Import = import;
 
-            SchemaName = (prefix + "_" + originalTable).ToLower();
+            SchemaName = GetSchemaName(prefix, originalTable);
             DisplayName = originalTable;
             DisplayCollectionName = originalTable + "s";
             OwnershipType = OwnershipTypes.UserOwned;
 
             Fields = new List<MigrateField>();
             Relationships = new List<MigrateRelationship>();
+        }
+
+        public static string GetSchemaName(string prefix, string tableName) {
+            return (prefix + "_" + tableName.Replace(" ", "")).ToLower();
         }
 
         #region EntityMetadata Fields 
@@ -70,11 +74,10 @@ namespace CDSTools
             {
                 SchemaName = SchemaName,
                 DisplayName = new Microsoft.Xrm.Sdk.Label(DisplayName, LanguageCode),
+                LogicalName = SchemaName.ToLower(),
                 DisplayCollectionName = new Microsoft.Xrm.Sdk.Label(DisplayCollectionName, LanguageCode),
                 OwnershipType = OwnershipTypes.UserOwned
             };
         }
-
     }
-
 }
