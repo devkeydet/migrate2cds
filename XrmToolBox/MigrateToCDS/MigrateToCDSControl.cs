@@ -1,14 +1,15 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using System.Collections.Generic;
-
 using System.Windows.Forms;
+
 using XrmToolBox.Extensibility;
+
 using Microsoft.Xrm.Sdk;
 using McTools.Xrm.Connection;
 using Microsoft.Xrm.Sdk.Metadata;
-using System.ComponentModel;
-using System.Drawing;
 
 namespace CDSTools
 {
@@ -24,7 +25,7 @@ namespace CDSTools
         }
 
         #region Plugin Control methods 
-        private void MyPluginControl_Load(object sender, EventArgs e)
+        private void MigrateToCDSControl_Load(object sender, EventArgs e)
         {
             // Loads or creates the settings for the plugin
             if (!SettingsManager.Instance.TryLoad(GetType(), out mySettings))
@@ -91,7 +92,7 @@ namespace CDSTools
 
             // save the current provider settings 
             mySettings.LastUsedConnectionString = provider.GetConnectionString();
-            mySettings.LastUsedProviderType = (provider is SQLDBProvider) ? SQLDBProvider.Name:AccessDBProvider.Name;
+            mySettings.LastUsedProviderType = (provider is SQLDBProvider) ? SQLDBProvider.Name : AccessDBProvider.Name;
 
             ReadDatabase();
         }
@@ -131,7 +132,6 @@ namespace CDSTools
                     BindEntitiesList();
                     BindNewRelationshipList();
                     BindRelationshipLists();
-
                 }
             });
         }
@@ -169,7 +169,7 @@ namespace CDSTools
                         .Distinct()
                         .ToList();
 
-                    list.Insert(0, "migrate2");
+                    list.Insert(0, MigrateDataBase.PREFIX);
                     comboPrefix.Items.AddRange(list.ToArray());
 
                     comboPrefix.SelectedIndex = 0;
@@ -195,37 +195,51 @@ namespace CDSTools
 
             tabControlMain.Enabled = dbLoaded;
         }
-        
+
         /// <summary>
         /// Helper to clear out lists.
         /// </summary>
         private void ClearLists()
         {
-            checkedListTables.Items.Clear();
-            checkedListAttributes.Items.Clear();
+            ClearListBox(checkedListTables);
+            ClearListBox(checkedListAttributes);
+            ClearListBox(listRelationships);
+
             propGridAtribute.SelectedObject = null;
             propGridTable.SelectedObject = null;
         }
 
+        private void ClearListBox(ListBox box) {
+            // var box = ((ListBox)checkedListTables);
+            box.DataSource = null;
+            box.SelectedIndex = -1;
+            box.Items.Clear();
+        }
+
+        /// <summary>
+        /// Bind the list of Fields for the selected entity 
+        /// </summary>
+        /// <param name="entity"></param>
         private void BindFieldList(MigrateEntity entity)
         {
             checkedListAttributes.SuspendLayout();
+            checkedListAttributes.SelectedIndex = -1;
+            propGridAtribute.SelectedObject = null;
 
             var box = ((ListBox)checkedListAttributes);
+            ClearListBox(checkedListAttributes);
 
-            box.DataSource = null;
-
-            checkedListAttributes.Items.Clear();
-
-            foreach (var field in entity.Fields)
+            if (entity != null)
             {
-                checkedListAttributes.Items.Add(
-                    new ListDisplayItem(field.SchemaName, field.ToString(), null, field), 
-                    field.Import);
+                foreach (var field in entity.Fields)
+                {
+                    checkedListAttributes.Items.Add(
+                        new ListDisplayItem(field.SchemaName, field.ToString(), null, field),
+                        field.Import);
+                }
+                box.DisplayMember = "DisplayName";
+                box.ValueMember = "Object.Import";
             }
-            box.DisplayMember = "DisplayName";
-            box.ValueMember = "Object.Import";
-
             checkedListAttributes.ResumeLayout();
         }
 
@@ -236,9 +250,8 @@ namespace CDSTools
 
             checkedListTables.SuspendLayout();
             var box = ((ListBox)checkedListTables);
-            box.DataSource = null;
+            ClearListBox(checkedListTables);
 
-            checkedListTables.Items.Clear();
             foreach (var entity in _migrateDB.NewEntities)
             {
                 checkedListTables.Items.Add(
@@ -259,12 +272,10 @@ namespace CDSTools
             _binding = true;
 
             listRelationships.SuspendLayout();
+            ClearListBox(listRelationships);
 
-            listRelationships.DataSource = null;
-            listRelationships.Items.Clear();
-            
             var relationList = _migrateDB.NewRelationships
-                .Where(r=> r.Import == true)
+                .Where(r => r.Import == true)
                 .Select(r => new ListDisplayItem(r.SchemaName, r.ToString(), null, r))
                 .ToList();
 
@@ -302,7 +313,7 @@ namespace CDSTools
             comboRelationshipSecondary.Items.Clear();
 
             var blank = new ListDisplayItem("", "", "", null);
-            relPrimary.Add(blank); 
+            relPrimary.Add(blank);
             relRelated.Add(blank);
 
             List<EntityMetadata> entityMeta = null;
@@ -417,17 +428,11 @@ namespace CDSTools
             BindNewRelationshipList();
         }
 
-        private void CreateEntities()
-        {
-            _migrateDB.CreateEntities(Service, checkPublish.Checked, checkAddNewFields.Checked);
-        }
-
         /// <summary>
         /// Build a list of the actions to be performed for the user to review 
         /// </summary>
         private void BuildActionsSummary()
         {
-
             // display the summary 
             if (tabControlMain.SelectedTab == tabPageCommit)
             {
@@ -540,7 +545,7 @@ namespace CDSTools
             base.UpdateConnection(newService, detail, actionName, parameter);
 
             // bind some UI controls using CRM data
-            if (Service!=null)
+            if (Service != null)
             {
                 labelCDSConnection.Text = ConnectionDetail.ConnectionName;
 
@@ -556,7 +561,7 @@ namespace CDSTools
         private void CheckedListAttributes_SelectedIndexChanged(object sender, EventArgs e)
         {
             var listItem = checkedListAttributes.SelectedItem as ListDisplayItem;
-            var attrib = listItem.Object as MigrateField;
+            var attrib = listItem?.Object as MigrateField;
 
             propGridAtribute.SelectedObject = attrib;
         }
@@ -628,7 +633,7 @@ namespace CDSTools
         {
             // get the entity from the list 
             var listItem = checkedListTables.SelectedItem as ListDisplayItem;
-            var ent = listItem.Object as MigrateEntity;
+            var ent = listItem?.Object as MigrateEntity;
 
             propGridTable.SelectedObject = ent;
 
@@ -666,8 +671,8 @@ namespace CDSTools
                     .Where(r => r.Entity1 == ent.SchemaName.ToLower() ||
                                 r.Entity2 == ent.SchemaName.ToLower())
                     .ToList();
-                // update the import value on the relation... if the entity isn't going to be imported, 
-                // don't import the relation 
+
+                // update the import value on the relation... if entity not imported, don't import the relation
                 if (relations.Count > 0) {
                     foreach (var r in relations) {
                         r.Import = import;
@@ -728,7 +733,26 @@ namespace CDSTools
 
         private void ButtonCreate_Click(object sender, EventArgs e)
         {
-            CreateEntities();
+            WorkAsync(new WorkAsyncInfo() {
+                AsyncArgument = new List<object>() { _migrateDB, Service },
+                Message = "Creating new Entities, Attributes, and Relationships",
+                MessageHeight = 200,
+                MessageWidth = 500,
+                Work = (worker, args) => 
+                {
+                    var inputs = args.Argument as List<object>;
+                    var migrateDB = inputs[0] as MigrateDataBase;
+                    var service = inputs[1] as IOrganizationService;
+
+                    migrateDB.CreateEntities(service, checkPublish.Checked, checkAddNewFields.Checked);
+                },
+                ProgressChanged = (args) => { 
+
+                },
+                PostWorkCallBack = (args) => {
+                }
+            });
+
 
         }
 
@@ -741,7 +765,7 @@ namespace CDSTools
         private void ListRelationships_SelectedIndexChanged(object sender, EventArgs e)
         {
             var listItem = listRelationships.SelectedItem as ListDisplayItem;
-            
+
             propGridRelation.SelectedObject = listItem?.Object as MigrateRelationship;
 
             buttonRemoveRelationship.Enabled = (propGridRelation.SelectedObject != null);
@@ -749,9 +773,9 @@ namespace CDSTools
 
         private void ComboRelationEntity_SelectedIndexChanged(object sender, EventArgs e)
         {
-            buttonAddRelationship.Enabled = 
+            buttonAddRelationship.Enabled =
                 ((comboRelationshipPrimary.SelectedValue != null) &&
-                (comboRelationshipSecondary.SelectedValue != null));                
+                (comboRelationshipSecondary.SelectedValue != null));
         }
 
         private void ButtonRemoveRelationship_Click(object sender, EventArgs e)
@@ -764,6 +788,69 @@ namespace CDSTools
                 _migrateDB.NewRelationships.Remove(rel);
                 BindNewRelationshipList();
             }
+        }
+
+        private void linkTableCheckNone_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ToggleEntitesChecked(false);
+        }
+
+        private void linkTableCheckAll_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ToggleEntitesChecked(true);
+        }
+
+        /// <summary>
+        ///  Helper method to get by issue with Checked Item list bindings
+        /// </summary>
+        /// <param name="checkAll"></param>
+        private void ToggleEntitesChecked(bool checkAll)
+        {
+            _migrateDB.NewEntities.ForEach(i => i.Import = checkAll);
+            BindEntitiesList();
+
+            // all entities imported, so all relations, too
+            _migrateDB.NewRelationships.ForEach(i => i.Import = checkAll);
+            BindNewRelationshipList();
+
+            // 
+            
+        }
+
+        /// <summary>
+        /// Check all items in a CheckedListBox or uncheck any selected
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="checkAll"></param>
+        private void CheckList_CheckAllNone(CheckedListBox checkedList, bool checkAll = false)
+        {
+            for (int index = 0; index < checkedList.Items.Count; index++)
+            {
+                var item = checkedList.Items[index] as ListDisplayItem;
+                ((MigrateItemBase)item.Object).Import = checkAll;
+            }
+        }
+
+        private void linkAttribCheckAll_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ToggleAttributesChecked(true);
+        }
+
+        private void linkAttribCheckNone_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ToggleAttributesChecked(false);
+        }
+
+        /// <summary>
+        ///  Helper method to get by issue with Checked Item list bindings
+        /// </summary>
+        /// <param name="checkAll"></param>
+        private void ToggleAttributesChecked(bool checkAll) {
+            // get the entity from the list 
+            var listItem = checkedListTables.SelectedItem as ListDisplayItem;
+            var ent = listItem.Object as MigrateEntity;
+            ent.Fields.ForEach(f => f.Import = checkAll);
+            BindFieldList(ent);
         }
 
         #endregion

@@ -1,4 +1,7 @@
-﻿using System.Data;
+﻿using System;
+using System.Windows;
+
+using System.Data;
 using System.Data.OleDb;
 using System.Collections.Generic;
 
@@ -87,8 +90,10 @@ namespace CDSTools
                     foreach (DataRow dr in dt.Rows)
                     {
                         //We are not allowing the same relationship multiple times
-                        if (!relationships.ContainsKey(dr.ItemArray[2].ToString()) && !relationships.ContainsValue(dr.ItemArray[8].ToString()))
+                        if (!relationships.ContainsKey(dr.ItemArray[2].ToString()) &&
+                            !relationships.ContainsValue(dr.ItemArray[8].ToString())) {
                             relationships.Add(dr.ItemArray[2].ToString(), dr.ItemArray[8].ToString());
+                        }
                     }
                 }
             }
@@ -162,6 +167,29 @@ namespace CDSTools
             return builder["Data Source"].ToString();
 
         }
+        /// <summary>
+        /// Helper method to test your connection
+        /// </summary>
+        /// <returns></returns>
+        public bool TestConnect()
+        {
+            var canConnect = false;
 
+            try
+            {
+                using (OleDbConnection con = new OleDbConnection(ConnectionString))
+                {
+                    con.Open();
+                }
+
+                canConnect = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The following error occurred attemting to connect:\n" + ex.Message);
+            }
+
+            return canConnect;
+        }
     }
 }

@@ -23,8 +23,8 @@ namespace CDSTools.UserControls
                 txtConnectionPassword.Clear();
             }
 
-            txtConnectionUsername.Enabled = isChecked;
-            txtConnectionPassword.Enabled = isChecked;
+            txtConnectionUsername.Enabled = !isChecked;
+            txtConnectionPassword.Enabled = !isChecked;
 
             SetConnStringAndProvider();
         }
@@ -101,8 +101,13 @@ namespace CDSTools.UserControls
             txtConnectionPassword.Enabled = Enabled;
 
             var isChecked = chkConnectionIntegrated.Checked;
-            txtConnectionUsername.Enabled = (Enabled) ? isChecked: Enabled;
-            txtConnectionPassword.Enabled = (Enabled) ? isChecked : Enabled;
+            txtConnectionUsername.Enabled = (Enabled) ? !isChecked: Enabled;
+            txtConnectionPassword.Enabled = (Enabled) ? !isChecked : Enabled;
+        }
+
+        private void TextFieldChanged_TextChanged(object sender, EventArgs e)
+        {
+            SetConnStringAndProvider();
         }
     }
 }

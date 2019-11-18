@@ -61,7 +61,6 @@ namespace CDSTools
                 ctl.Visible = true;
                 ctl.Enabled = true;
             }
-
         }
 
         private void Connect_Load(object sender, EventArgs e)
@@ -79,6 +78,25 @@ namespace CDSTools
             comboDSType.Items.AddRange( new string[] { AccessDBProvider.Name, SQLDBProvider.Name });
 
             comboDSType.SelectedIndex = 0;
+        }
+
+        private void GetProvider() {
+
+            var providerType = comboDSType.SelectedItem?.ToString();
+            var ctl = Controls[providerType];
+
+            if (providerType != null)
+            {
+                Provider = ((IProviderControl)ctl).GetProvider();
+            }
+        }
+
+        private void buttonTest_Click(object sender, EventArgs e)
+        {
+            GetProvider();
+
+            Provider.TestConnect();
+
         }
     }
 }

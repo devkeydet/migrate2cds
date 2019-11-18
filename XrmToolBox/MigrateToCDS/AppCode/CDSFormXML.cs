@@ -204,8 +204,6 @@ namespace CDSTools
                 if (fieldCount % 2 == 0 || fieldCount == fields.Count())
                     rows.FirstOrDefault().Add(row);
             }
-
-
             return form.ToString();
         }
 

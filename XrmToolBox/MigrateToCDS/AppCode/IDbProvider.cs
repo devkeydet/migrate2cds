@@ -6,6 +6,12 @@ namespace CDSTools
     public interface IDbProvider
     {
         /// <summary>
+        /// Helper method for testing connectivity
+        /// </summary>
+        /// <returns></returns>
+        bool TestConnect();
+
+        /// <summary>
         /// helper method for display of connection string 
         /// </summary>
         /// <returns></returns>

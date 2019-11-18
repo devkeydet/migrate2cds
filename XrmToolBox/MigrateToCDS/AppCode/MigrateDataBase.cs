@@ -8,6 +8,8 @@ namespace CDSTools
 {
     public class MigrateDataBase
     {
+        public const string PREFIX = "migrate2";
+
         #region Options 
         /// <summary>
         /// Flag indicating whether to remove extra prefixes when creating relationships 
@@ -23,7 +25,7 @@ namespace CDSTools
         public List<MigrateRelationship> NewRelationships { get; private set; } = new List<MigrateRelationship>();
         public List<MigrateRelationship> CreatedRelationships { get; private set; } = new List<MigrateRelationship>();
 
-        private string _prefix = "migrate2";
+        private string _prefix = PREFIX;
         public string Prefix { get=> _prefix;
             set {
                 _prefix = value.Trim().ToLower();
@@ -52,8 +54,9 @@ namespace CDSTools
                 foreach (KeyValuePair<string, string> field in fields)
                 {
                     string name = ValidateFieldSchemaName(field.Key, Prefix, table);
-
-                    newEntity.Fields.Add(new MigrateField(name, Provider.DBTypeToCRMType(field.Value), Prefix, false));
+                    var fldType = Provider.DBTypeToCRMType(field.Value);
+                    var fld = new MigrateField(name, fldType, Prefix, false);
+                    newEntity.Fields.Add(fld);
                 }
 
                 NewEntities.Add(newEntity);

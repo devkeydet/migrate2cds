@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
-using static CDSTools.MigrateField;
+using System.Windows;
 
 namespace CDSTools
 {
@@ -166,5 +167,31 @@ namespace CDSTools
             return builder["Data Source"].ToString() + " / " + builder["Initial Catalog"].ToString();
         }
 
+        /// <summary>
+        /// Helper method to test your connection
+        /// </summary>
+        /// <returns></returns>
+        public bool TestConnect()
+        {
+            var canConnect = false;
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(_connectionString))
+                {
+                    string strSQL = "SELECT name FROM sys.Tables";
+                    SqlCommand cmd = new SqlCommand(strSQL, con);
+                    con.Open();
+                    SqlDataReader rdr = cmd.ExecuteReader();
+                }
+
+                canConnect = true;
+            }
+            catch (Exception ex) {
+                MessageBox.Show("The following error occurred attemting to connect:\n" + ex.Message);
+            }
+
+            return canConnect;
+        }
     }
 }

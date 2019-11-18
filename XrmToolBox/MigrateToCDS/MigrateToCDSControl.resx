@@ -124,7 +124,7 @@
     <value>Choose a prefix from the publishers on the system or enter your own.  Connect to your data source, either an Access or SQL Server Database. Once connected, review the avaialble Tables, Fields, and Relationships that you wish to import</value>
   </data>
   <data name="labelRelationInstructions.Text" xml:space="preserve">
-    <value>To add a new relationship, select the Relationship Type, the Primary and Related Entities, and choose Add Relationship.  To remove a relationship from the list, choose a reationship from the list and select Remove Relationship to the right.</value>
+    <value>This list includes relationships found in your source Database.  To add a new relationship, select the Relationship Type, the Primary and Related Entities, and choose Add Relationship.  To remove a relationship from the list, choose a reationship from the list and select Remove Relationship to the right.</value>
   </data>
   <metadata name="statusStripMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>357, 17</value>

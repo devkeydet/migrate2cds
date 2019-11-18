@@ -7,7 +7,7 @@ namespace CDSTools
 {
     public class MigrateEntity: MigrateItemBase
     {
-        string _prefix = "";
+        string _prefix = MigrateDataBase.PREFIX;
 
         bool _import = true;
         public int LanguageCode { get; set; } = 1033;

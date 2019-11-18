@@ -19,18 +19,17 @@ namespace CDSTools
     /// <summary>
     /// Class the encapsulates a relationship to that will be added to the DB
     /// </summary>
-    public class MigrateRelationship
+    public class MigrateRelationship: MigrateItemBase
     {
-        bool _import = true;
-
-        [Category("Properties")]
-        public new bool Import
-        {
-            get => _import;
-            set {
-                _import = value;
-            }
-        }
+        //bool _import = true;
+        //[Category("Properties")]
+        //public new bool Import
+        //{
+        //    get => _import;
+        //    set {
+        //        _import = value;
+        //    }
+        //}
 
         public string Prefix { get; private set; }
 

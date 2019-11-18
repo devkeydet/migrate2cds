@@ -27,10 +27,8 @@ namespace CDSTools
     public class MigrateField: MigrateItemBase //: MetadataBase //, INotifyPropertyChanged
     {
         // public event PropertyChangedEventHandler PropertyChanged;
-
-        string _prefix = "mograte2";
+        string _prefix = MigrateDataBase.PREFIX;
         string _originalField = "new field";
-        // AttributeMetadata _metadata = null;
         AttributeMetadataType _type = AttributeMetadataType.SingleLineOfText;
 
         [Category("Field Properties")]
@@ -99,11 +97,12 @@ namespace CDSTools
         /// <param name="type"></param>
         /// <param name="prefix"></param>
         /// <param name="import"></param>
-        public MigrateField(string orignalField, AttributeMetadataType type, string prefix, bool import)
+        public MigrateField(string orignalField, AttributeMetadataType attrType, string prefix, bool import)
         {
             Import = import;
 
             _prefix = prefix;
+            _type = attrType;
 
             OriginalField = orignalField;
             DisplayName = orignalField;
@@ -120,6 +119,9 @@ namespace CDSTools
                                                       .Replace("/", "_");
         }
 
+        /// <summary>
+        /// Based on the attribute metadata type, preset some of the details
+        /// </summary>
         public void SetMetadataType()
         {
             switch (AttributeType)
@@ -232,6 +234,10 @@ namespace CDSTools
                 MaxLength = MaxLength
             };
         }
+        public override string ToString()
+        {
+            return $"Length: {MaxLength.ToString()}, Format: {Format.ToString()}";
+        }
     }
 
     /// <summary>
@@ -254,6 +260,10 @@ namespace CDSTools
                 MaxValue = MaxValue
             };
         }
+        public override string ToString()
+        {
+            return $"({MinValue.ToString()}, {MaxValue.ToString()}), Precision: {Precision?.ToString()}";
+        }
     }
 
     /// <summary>
@@ -269,7 +279,10 @@ namespace CDSTools
             {
                 Format = Format
             };
-
+        }
+        public override string ToString()
+        {
+            return $"Format: {Format.ToString()}";
         }
     }
 
@@ -291,6 +304,11 @@ namespace CDSTools
                 MaxValue = MaxValue
             };
         }
+
+        public override string ToString()
+        {
+            return $"({MinValue.ToString()}, {MaxValue.ToString()}), Precision: {Precision?.ToString()}"; 
+        }
     }
 
     /// <summary>
@@ -307,6 +325,10 @@ namespace CDSTools
             {
                 MaxLength = MaxLength
             };
+        }
+        public override string ToString()
+        {
+            return $"Length: {MaxLength.ToString()}";
         }
     }
 
@@ -326,6 +348,10 @@ namespace CDSTools
                 MinValue = MinValue,
                 MaxValue = MaxValue
             };
+        }
+        public override string ToString()
+        {
+            return $"({MinValue.ToString()}, {MaxValue.ToString()}), Precision: {Precision?.ToString()}";
         }
     }
 
@@ -347,6 +373,11 @@ namespace CDSTools
                 MaxValue = MaxValue
             };
         }
+        public override string ToString()
+        {
+            return $"({MinValue.ToString()}, {MaxValue.ToString()}), Format: {Format?.ToString()}";
+        }
+
     }
 
     /// <summary>
@@ -370,6 +401,11 @@ namespace CDSTools
             };
         }
 
+        public override string ToString()
+        {
+            return $"True: {TrueOption.ToString()}, False: {FalseOption.ToString()}";
+        }
+
         [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
         public class Option {
             public string Label { get; set; }
@@ -378,7 +414,13 @@ namespace CDSTools
             {
                 return new OptionMetadata(new Label(Label, languageCode), Value);
             }
+
+            public override string ToString()
+            {
+                return $"{Label} ({Value.ToString()})";
+            }
         }
+
     }
     #endregion
 }
