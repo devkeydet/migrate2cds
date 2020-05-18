@@ -183,6 +183,7 @@ namespace XrmSpeedyUI
                     cSQLServer.Controls["chkConnectionIntegrated"].Enabled = false;
                     cSQLServer.Controls["txtConnectionUsername"].Enabled = false;
                     cSQLServer.Controls["txtConnectionPassword"].Enabled = false;
+                    chkOmitPrefixForRelationships.Enabled = false;
                     break;
                 case "MS Access":
                     AccessDBProvider accessProvier = new AccessDBProvider(ConnectionString);
@@ -194,6 +195,7 @@ namespace XrmSpeedyUI
                     cAccess.Controls["btnBrowse"].Enabled = false;
                     cAccess.Controls["chkPassword"].Enabled = false;
                     cAccess.Controls["txtConnectionPassword"].Enabled = false;
+                    chkOmitPrefixForRelationships.Enabled = false;
                     break;
             }
 
@@ -377,6 +379,8 @@ namespace XrmSpeedyUI
             {
                 txtEntityDisplayName.Text = clbTables.SelectedItem.ToString();
                 txtEntityPluralName.Text = clbTables.SelectedItem.ToString() + "s";
+                txtPrimaryAttributeSize.Text = "100";
+                chkShortPrimaryAttributeName.Checked = false;
             }
             else
             {
@@ -386,6 +390,8 @@ namespace XrmSpeedyUI
                     SelectedEntity.EntityMetadata.Description.LocalizedLabels.Where(l => l.LanguageCode == 1033).FirstOrDefault().Label :
                     string.Empty;
                 txtEntitySchemaName.Text = SelectedEntity.EntityMetadata.SchemaName.Split('_')[1];
+                txtPrimaryAttributeSize.Text = SelectedEntity.PrimaryAttributeSize.ToString();
+                chkShortPrimaryAttributeName.Checked = SelectedEntity.ShortPrimaryAttributeName;
             }
         }
 
@@ -1158,6 +1164,33 @@ namespace XrmSpeedyUI
                 SelectedEntity.EntityMetadata.Description = null;
         }
 
+        private void txtEntityPrimaryFieldSize_Validated(object sender, EventArgs e)
+        {
+            int fieldSize;
+            int.TryParse(txtPrimaryAttributeSize.Text, out fieldSize);
+            SelectedEntity.PrimaryAttributeSize = fieldSize;
+        }
+
+        private void txtEntityPrimaryFieldSize_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string message = string.Empty;
+            bool error = false;
+
+            int fieldSize;
+            if (!int.TryParse(txtPrimaryAttributeSize.Text, out fieldSize) || fieldSize <= 0)
+            {
+                message = "Primary Field Size must be a number between 1 and 4000";
+                error = true;
+            }
+
+            if (error)
+            {
+                MessageBox.Show(message, "Error");
+                SelectedEntity = NewEntities.Find(c => c.OriginalTable == clbTables.SelectedItem.ToString().Replace(" [In Relationship]", string.Empty));
+                txtPrimaryAttributeSize.Text = SelectedEntity.PrimaryAttributeSize.ToString();
+            }
+        }
+
         private void txtFieldDisplayName_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             string message = string.Empty;
@@ -1812,6 +1845,12 @@ namespace XrmSpeedyUI
             txtFieldFloatMaximum.Text = double.Parse(txtFieldFloatMaximum.Text.Trim()).ToString("F" + ddlFieldFloatPrecision.SelectedValue.ToString());
         }
 
+        private void chkShortPrimaryAttributeName_CheckedChanged(object sender, EventArgs e)
+        {
+            SelectedEntity.ShortPrimaryAttributeName
+                        = chkShortPrimaryAttributeName.Checked;
+        }
+
         #endregion
 
         #region Relationships
@@ -1829,6 +1868,7 @@ namespace XrmSpeedyUI
             ddlRelationshipSecondary.Enabled = false;
             ddlRelationshipSecondary.SelectedIndex = -1;
             btnRelationshipAdd.Enabled = false;
+            chkOmitPrefixForRelationships.Enabled = true;
         }
 
         private void ddlRelationshipType_SelectedIndexChanged(object sender, EventArgs e)
@@ -1981,7 +2021,9 @@ namespace XrmSpeedyUI
 
         private string CreateRelationshipSchemaName(string entity1, string entity2)
         {
-            return string.Concat(txtPrefix.Text.Trim(), "_", entity1, "_", entity2);
+            return chkOmitPrefixForRelationships.Checked
+              ? string.Concat(entity1, "_", entity2)
+              : string.Concat(txtPrefix.Text.Trim(), "_", entity1, "_", entity2);
         }
 
         private string GetEntityDisplayName(string logicalName)
