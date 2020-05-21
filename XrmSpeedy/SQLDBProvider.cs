@@ -94,7 +94,7 @@ namespace XrmSpeedy
                     while (rdr.Read())
                     {
                         //We are not allowing the same relationship multiple times
-                        if (!relationships.ContainsKey(rdr["ReferenceTableName"].ToString()) && !relationships.ContainsValue(rdr["TableName"].ToString()))
+                        if (!relationships.ContainsKey(rdr["ReferenceTableName"].ToString()) || !relationships.ContainsValue(rdr["TableName"].ToString()))
                             relationships.Add(rdr["ReferenceTableName"].ToString(), rdr["TableName"].ToString());
                     }
                 }
