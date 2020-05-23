@@ -29,9 +29,11 @@ namespace XrmSpeedy
                     // Define the primary attribute for the entity
                     PrimaryAttribute = new StringAttributeMetadata
                     {
-                        SchemaName = entity.EntityMetadata.SchemaName + "name",
+                        SchemaName = entity.ShortPrimaryAttributeName
+                            ? entity.EntityMetadata.SchemaName.Split('_')[0] + "_" + "name"
+                            : entity.EntityMetadata.SchemaName + "name",
                         RequiredLevel = new AttributeRequiredLevelManagedProperty(AttributeRequiredLevel.ApplicationRequired),
-                        MaxLength = 100,
+                        MaxLength = entity.PrimaryAttributeSize,
                         Format = StringFormat.Text,
                         DisplayName = new Label("Name", languageCode),
                         Description = new Label("The primary attribute for the entity.", languageCode)

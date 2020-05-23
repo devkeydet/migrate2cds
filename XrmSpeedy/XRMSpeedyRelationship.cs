@@ -32,9 +32,10 @@ namespace XrmSpeedy
         {
             return new LookupAttributeMetadata
             {
-                SchemaName = string.Concat(prefix, "_", "parent", "_", entity1, "id"),
+                SchemaName = string.Concat(prefix, entity1),
                 DisplayName = new Label(entity1Display, 1033),
-                RequiredLevel = new AttributeRequiredLevelManagedProperty(AttributeRequiredLevel.None)
+                RequiredLevel = new AttributeRequiredLevelManagedProperty(AttributeRequiredLevel.None),
+                Description = new Label(entity1Display, 1033)
             };
         }
     }

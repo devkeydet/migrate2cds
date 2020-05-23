@@ -85,6 +85,7 @@
             this.label30 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.grpConnection = new System.Windows.Forms.GroupBox();
+            this.chkOmitPrefixForRelationships = new System.Windows.Forms.CheckBox();
             this.label33 = new System.Windows.Forms.Label();
             this.btnRestart = new System.Windows.Forms.Button();
             this.txtPrefix = new System.Windows.Forms.TextBox();
@@ -95,6 +96,10 @@
             this.btnAuthenticate = new System.Windows.Forms.Button();
             this.grpTables = new System.Windows.Forms.GroupBox();
             this.grpEntity = new System.Windows.Forms.GroupBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.chkShortPrimaryAttributeName = new System.Windows.Forms.CheckBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.txtPrimaryAttributeSize = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
@@ -747,6 +752,7 @@
             // 
             // grpConnection
             // 
+            this.grpConnection.Controls.Add(this.chkOmitPrefixForRelationships);
             this.grpConnection.Controls.Add(this.label33);
             this.grpConnection.Controls.Add(this.btnRestart);
             this.grpConnection.Controls.Add(this.txtPrefix);
@@ -763,6 +769,16 @@
             this.grpConnection.TabIndex = 23;
             this.grpConnection.TabStop = false;
             this.grpConnection.Text = "Step 1";
+            // 
+            // chkOmitPrefixForRelationships
+            // 
+            this.chkOmitPrefixForRelationships.AutoSize = true;
+            this.chkOmitPrefixForRelationships.Location = new System.Drawing.Point(297, 21);
+            this.chkOmitPrefixForRelationships.Name = "chkOmitPrefixForRelationships";
+            this.chkOmitPrefixForRelationships.Size = new System.Drawing.Size(151, 17);
+            this.chkOmitPrefixForRelationships.TabIndex = 2;
+            this.chkOmitPrefixForRelationships.Text = "Omit prefix for relationships";
+            this.chkOmitPrefixForRelationships.UseVisualStyleBackColor = true;
             // 
             // label33
             // 
@@ -791,7 +807,7 @@
             this.txtPrefix.Location = new System.Drawing.Point(235, 20);
             this.txtPrefix.MaxLength = 8;
             this.txtPrefix.Name = "txtPrefix";
-            this.txtPrefix.Size = new System.Drawing.Size(181, 20);
+            this.txtPrefix.Size = new System.Drawing.Size(56, 20);
             this.txtPrefix.TabIndex = 16;
             this.txtPrefix.Text = "xrmspdy";
             this.txtPrefix.Validating += new System.ComponentModel.CancelEventHandler(this.txtPrefix_Validating);
@@ -870,6 +886,10 @@
             // 
             // grpEntity
             // 
+            this.grpEntity.Controls.Add(this.label52);
+            this.grpEntity.Controls.Add(this.chkShortPrimaryAttributeName);
+            this.grpEntity.Controls.Add(this.label51);
+            this.grpEntity.Controls.Add(this.txtPrimaryAttributeSize);
             this.grpEntity.Controls.Add(this.label36);
             this.grpEntity.Controls.Add(this.label35);
             this.grpEntity.Controls.Add(this.label34);
@@ -890,6 +910,48 @@
             this.grpEntity.TabIndex = 10;
             this.grpEntity.TabStop = false;
             this.grpEntity.Visible = false;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label52.Location = new System.Drawing.Point(123, 142);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(27, 13);
+            this.label52.TabIndex = 24;
+            this.label52.Text = "Size";
+            // 
+            // chkShortPrimaryAttributeName
+            // 
+            this.chkShortPrimaryAttributeName.AutoSize = true;
+            this.chkShortPrimaryAttributeName.Location = new System.Drawing.Point(156, 115);
+            this.chkShortPrimaryAttributeName.Name = "chkShortPrimaryAttributeName";
+            this.chkShortPrimaryAttributeName.Size = new System.Drawing.Size(58, 17);
+            this.chkShortPrimaryAttributeName.TabIndex = 20;
+            this.chkShortPrimaryAttributeName.Text = "_name";
+            this.chkShortPrimaryAttributeName.UseVisualStyleBackColor = true;
+            this.chkShortPrimaryAttributeName.CheckedChanged += new System.EventHandler(this.chkShortPrimaryAttributeName_CheckedChanged);
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label51.Location = new System.Drawing.Point(152, 97);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(66, 13);
+            this.label51.TabIndex = 23;
+            this.label51.Text = "Primary Field";
+            // 
+            // txtPrimaryAttributeSize
+            // 
+            this.txtPrimaryAttributeSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrimaryAttributeSize.Location = new System.Drawing.Point(154, 139);
+            this.txtPrimaryAttributeSize.MaxLength = 39;
+            this.txtPrimaryAttributeSize.Name = "txtPrimaryAttributeSize";
+            this.txtPrimaryAttributeSize.Size = new System.Drawing.Size(53, 20);
+            this.txtPrimaryAttributeSize.TabIndex = 22;
+            this.txtPrimaryAttributeSize.Validating += new System.ComponentModel.CancelEventHandler(this.txtEntityPrimaryFieldSize_Validating);
+            this.txtPrimaryAttributeSize.Validated += new System.EventHandler(this.txtEntityPrimaryFieldSize_Validated);
             // 
             // label36
             // 
@@ -925,7 +987,7 @@
             // 
             this.lblEntityPrefix.AutoSize = true;
             this.lblEntityPrefix.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEntityPrefix.Location = new System.Drawing.Point(6, 122);
+            this.lblEntityPrefix.Location = new System.Drawing.Point(6, 115);
             this.lblEntityPrefix.Name = "lblEntityPrefix";
             this.lblEntityPrefix.Size = new System.Drawing.Size(51, 13);
             this.lblEntityPrefix.TabIndex = 10;
@@ -934,10 +996,10 @@
             // txtEntitySchemaName
             // 
             this.txtEntitySchemaName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEntitySchemaName.Location = new System.Drawing.Point(57, 119);
+            this.txtEntitySchemaName.Location = new System.Drawing.Point(57, 112);
             this.txtEntitySchemaName.MaxLength = 39;
             this.txtEntitySchemaName.Name = "txtEntitySchemaName";
-            this.txtEntitySchemaName.Size = new System.Drawing.Size(155, 20);
+            this.txtEntitySchemaName.Size = new System.Drawing.Size(93, 20);
             this.txtEntitySchemaName.TabIndex = 9;
             this.txtEntitySchemaName.Validating += new System.ComponentModel.CancelEventHandler(this.txtEntitySchemaName_Validating);
             this.txtEntitySchemaName.Validated += new System.EventHandler(this.txtEntitySchemaName_Validated);
@@ -979,11 +1041,11 @@
             // txtEntityDescription
             // 
             this.txtEntityDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEntityDescription.Location = new System.Drawing.Point(6, 158);
+            this.txtEntityDescription.Location = new System.Drawing.Point(6, 165);
             this.txtEntityDescription.MaxLength = 200;
             this.txtEntityDescription.Multiline = true;
             this.txtEntityDescription.Name = "txtEntityDescription";
-            this.txtEntityDescription.Size = new System.Drawing.Size(206, 40);
+            this.txtEntityDescription.Size = new System.Drawing.Size(206, 33);
             this.txtEntityDescription.TabIndex = 5;
             this.txtEntityDescription.Validated += new System.EventHandler(this.txtEntityDescription_Validated);
             // 
@@ -991,7 +1053,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 142);
+            this.label5.Location = new System.Drawing.Point(6, 148);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 13);
             this.label5.TabIndex = 4;
@@ -1620,6 +1682,11 @@
         private System.Windows.Forms.TextBox txtFieldWholeMinimum;
         private System.Windows.Forms.Label label18;
         private System.ComponentModel.BackgroundWorker bgWorkerDelete;
+        private System.Windows.Forms.CheckBox chkOmitPrefixForRelationships;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.TextBox txtPrimaryAttributeSize;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.CheckBox chkShortPrimaryAttributeName;
     }
 }
 
